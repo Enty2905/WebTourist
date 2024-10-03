@@ -20,6 +20,11 @@
     justify-content: space-between;
 }
 
+.header__top--scrolled {
+    background: #ffffffd5;
+    border-bottom: 1px solid grey;
+}
+
 .navbar__list {
     display: flex;
     align-items: center;
@@ -39,7 +44,6 @@
     text-shadow: 1px 0px 1px currentColor;
 }
 
-.header__btn:hover {}
 
 .header__banner {
     position: relative;
@@ -85,14 +89,12 @@
     flex-wrap: nowrap;
     gap: 20px;
     overflow-x: auto;
-    scrollbar-width: none;
+    overflow-y: hidden;
     scrollbar-width: none;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
 }
-.no-transition{
-    scroll-behavior: auto;
-}
+
 .banner__img {
     width: 400px;
     height: 850px;
