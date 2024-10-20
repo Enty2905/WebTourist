@@ -33,7 +33,7 @@ function slideNextImage() {
         bannerWrap.style.transform = `translateX(0)`;
     }, 500);
 }
-slideInterval = setInterval(slideNextImage, 30000);
+slideInterval = setInterval(slideNextImage, 3000);
 
 bannerWrap.addEventListener('mouseenter', () => {
     clearInterval(slideInterval);

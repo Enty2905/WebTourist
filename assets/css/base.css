@@ -9,8 +9,15 @@ a {
 }
 
 :root {
+    --primary-color: ;
+    --color-text: #40514E;
 }
-
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 3);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
