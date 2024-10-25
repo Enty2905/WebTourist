@@ -21,6 +21,41 @@
 <body>
     <!-- Header -->
     <header class="header">
+        <!-- Header info -->
+        <div class="header__info">
+            <div class="container__fluid">
+                <div class="header__info-inner">
+                    <div class="header__contact">
+                        <div class="header__contact-list">
+                            <div class="header__contact-item">
+                                <div class="header__contact-icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <a href="mailto:disanmientrung@dsmt.vn" class="header__contact-text">
+                                    disanmientrung@dsmt.vn
+                                </a>
+                            </div>
+                            <div class="header__contact-item">
+                                <div class="header__contact-icon">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <a href="tel:0705974995" class="header__contact-text">
+                                    0705974995
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header__socail">
+                        <div class="header__social-list">
+                            <a href="" class="header__social-item"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="" class="header__social-item"><i class="fa-brands fa-tiktok"></i></i></a>
+                            <a href="" class="header__social-item"><i class="fa-brands fa-instagram"></i></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
         <!-- Header top -->
         <div class="header__top">
             <div class="container__fluid">
@@ -50,10 +85,9 @@
                             </li>
                         </ul>
                     </nav>
-
-                    <div class="header-action">
-                        <a href="" class="btn header__btn">Login</a>
-                    </div>
+                    <a href="" class="header__account">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -62,19 +96,13 @@
             <h1 class="header__title">
                 Wondrous City Tours
             </h1>
-            <div class="banner">
-                <figure class="banner__img-wrap">
-                    <img src="./assets/img/Song_Huong_Hue.jpg" alt="" class="banner__img">
-                    <img src="./assets/img/Dam_Pha_Tam_Giang_Hue.jpg" alt="" class="banner__img">
-                    <img src="./assets/img/Cau_Rong_DaNang.jpg" alt="" class="banner__img">
-                    <img src="./assets/img/Cau_Thuan_Phuoc_DaNang.jpg" alt="" class="banner__img">
-                    <img src="./assets/img/Chua_Linh_Ung_DaNang.jpg" alt="" class="banner__img">
-                    <img src="./assets/img/Chua_Linh_Ung_DaNang.jpg" alt="" class="banner__img">
-                    <img src="./assets/img/Chua_Linh_Ung_DaNang.jpg" alt="" class="banner__img">
-                    <img src="./assets/img/Chua_Linh_Ung_DaNang.jpg" alt="" class="banner__img">
-                    <img src="./assets/img/Chua_Linh_Ung_DaNang.jpg" alt="" class="banner__img">
-                </figure>
-            </div>
+            <figure class="banner__img-wrap">
+                <img src="./assets/img/Song_Huong_Hue.jpg" alt="" class="banner__img banner__img--active">
+                <img src="./assets/img/Dam_Pha_Tam_Giang_Hue.jpg" alt="" class="banner__img active">
+                <img src="./assets/img/Cau_Rong_DaNang.jpg" alt="" class="banner__img">
+                <img src="./assets/img/Cau_Thuan_Phuoc_DaNang.jpg" alt="" class="banner__img">
+                <img src="./assets/img/Bai_Tam_Non_Nuoc_DaNang.jpg" alt="" class="banner__img">
+            </figure>
         </section>
     </header>
     <!-- End Header -->
@@ -412,17 +440,94 @@
                 </div>
             </div>
         </section>
+        <section class="guides">
+            <div class="container">
+                <div class="guides__inner">
+                    <div class="guides__top">
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="guides__desc section-desc-heading">
+                                    Blog
+                                </p>
+                                <h2 class="guides__title section-title">
+                                    Latest Travel Guides
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guides__body">
+                        <div class="row">
+                            <div class="col-6">
+                                <article class="guides__blog-main">
+                                    <figure class="guides__img-wrap">
+                                        <img src="./assets/img/blog_10-500x280.jpeg" alt="" class="guides__img">
+                                    </figure>
+                                    <div class="guides__blog-info">
+                                        <p class="guides__date">02/09/2005 ' Quảng Bình</p>
+                                        <h3 class="guides__title">10 Best Places to Visit in Dalhousie, Himacha</h3>
+                                        <p class="guides__desc">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam laborum
+                                            ipsum incidunt aspernatur, placeat qui animi illum libero eius quasi neque
+                                            fugit laudantium necessitatibus doloribus! Commodi rerum cum quia suscipit!
+                                        </p>
+                                        <a href="" class="guides__action"> <span class="guides__action-text">Read
+                                                more </span><i class="fa-solid fa-chevron-right"></i></a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-6">
+                                <ul class="guides__list">
+                                    <li class="guides__item">
+                                        <figure class="guides__img-wrap--small">
+                                            <img src="./assets/img/Ba_Na_Hill_DaNang.jpg" alt=""
+                                                class="guides__img--small">
+                                        </figure>
+                                        <div class="guides__blog-info--small">
+                                            <p class="guides__date guides__date--small">02/09/2005 ' Quảng Bình</p>
+                                            <h3 class="guides__title--small">10 Best Places to Visit in
+                                                Dalhousie,Himachal</h3>
+                                            <a href="" class="guides__action"> <span class="guides__action-text">View
+                                                    more </span><i class="fa-solid fa-chevron-right"></i></a>
+                                        </div>
+                                    </li>
+                                    <li class="guides__item">
+                                        <figure class="guides__img-wrap--small">
+                                            <img src="./assets/img/Ba_Na_Hill_DaNang.jpg" alt=""
+                                                class="guides__img--small">
+                                        </figure>
+                                        <div class="guides__blog-info--small">
+                                            <p class="guides__date guides__date--small">02/09/2005 ' Quảng Bình</p>
+                                            <h3 class="guides__title--small">10 Best Places to Visit in
+                                                Dalhousie,Himachal</h3>
+                                            <a href="" class="guides__action"> <span class="guides__action-text">View
+                                                    more </span><i class="fa-solid fa-chevron-right"></i></a>
+                                        </div>
+                                    </li>
+                                    <li class="guides__item">
+                                        <figure class="guides__img-wrap--small">
+                                            <img src="./assets/img/Ba_Na_Hill_DaNang.jpg" alt=""
+                                                class="guides__img--small">
+                                        </figure>
+                                        <div class="guides__blog-info--small">
+                                            <p class="guides__date guides__date--small">02/09/2005 ' Quảng Bình</p>
+                                            <h3 class="guides__title--small">10 Best Places to Visit in
+                                                Dalhousie,Himachal</h3>
+                                            <a href="" class="guides__action"> <span class="guides__action-text">View
+                                                    more </span><i class="fa-solid fa-chevron-right"></i></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="review">
             <div class="container">
                 <div class="review__list row">
                     <div class="col-4">
                         <div class="review__item">
-                            <p class="review__desc line-clamp" style="--line-clamp : 7;">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore ipsam recusandae nobis
-                                quod,
-                                corrupti consequuntur harum quis ad possimus modi! Est delectus alias quae unde
-                                exercitationem corporis accusantium suscipit veniam!
-                            </p>
                             <div class="review__info">
                                 <figure class="review__avt-wrap">
                                     <img src="./assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="review__avt">
@@ -440,16 +545,16 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="review__item">
                             <p class="review__desc line-clamp" style="--line-clamp : 7;">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore ipsam recusandae nobis
                                 quod,
                                 corrupti consequuntur harum quis ad possimus modi! Est delectus alias quae unde
                                 exercitationem corporis accusantium suscipit veniam!
                             </p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="review__item">
                             <div class="review__info">
                                 <figure class="review__avt-wrap">
                                     <img src="./assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="review__avt">
@@ -467,16 +572,16 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="review__item">
                             <p class="review__desc line-clamp" style="--line-clamp : 7;">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore ipsam recusandae nobis
                                 quod,
                                 corrupti consequuntur harum quis ad possimus modi! Est delectus alias quae unde
                                 exercitationem corporis accusantium suscipit veniam!
                             </p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="review__item">
                             <div class="review__info">
                                 <figure class="review__avt-wrap">
                                     <img src="./assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="review__avt">
@@ -494,6 +599,12 @@
                                     </div>
                                 </div>
                             </div>
+                            <p class="review__desc line-clamp" style="--line-clamp : 7;">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore ipsam recusandae nobis
+                                quod,
+                                corrupti consequuntur harum quis ad possimus modi! Est delectus alias quae unde
+                                exercitationem corporis accusantium suscipit veniam!
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -501,27 +612,33 @@
         </section>
     </main>
     <!-- End Main -->
-     <!-- Footer -->
-     <footer class="footer">
-        <div class="container">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-xl-6 col-md-6 col-lg-12 col-12">
+                <div class="col-xl-4 col-md-6 col-lg-12 col-12">
                     <div class="footer__info">
                         <h2 class="footer__info-title">
                             Contact
                         </h2>
-                        <div class="footer__info-location">
-                            <a href="https://www.google.com/maps/place/279+%C4%90.+Mai+%C4%90%C4%83ng+Ch%C6%A1n,+Ho%C3%A0+H%E1%BA%A3i,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vi%E1%BB%87t+Nam/@15.9902661,108.2439063,17z/data=!3m1!4b1!4m6!3m5!1s0x3142109909a5c113:0xec183e71a660c3b8!8m2!3d15.990261!4d108.2464866!16s%2Fg%2F11hd1zsth0?entry=ttu"
-                                target="_blank" class="footer__info-text">
-                                Address : 279 Mai Đăng Chơn - Ngũ Hành Sơn - Đà Nẵng
-                            </a>
+                        <div class="footer__info-detail">
+                            <div class="footer__info-location">
+                                <a href="https://www.google.com/maps/place/279+%C4%90.+Mai+%C4%90%C4%83ng+Ch%C6%A1n,+Ho%C3%A0+H%E1%BA%A3i,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vi%E1%BB%87t+Nam/@15.9902661,108.2439063,17z/data=!3m1!4b1!4m6!3m5!1s0x3142109909a5c113:0xec183e71a660c3b8!8m2!3d15.990261!4d108.2464866!16s%2Fg%2F11hd1zsth0?entry=ttu"
+                                    target="_blank" class="footer__info-text">
+                                    <strong>Address</strong> : 279 Mai Đăng Chơn - Ngũ Hành Sơn - Đà Nẵng
+                                </a>
+                            </div>
+                            <p>
+                                <a href="mailto:contact@tnna.vn" class="footer__info-text"><strong>Email</strong> :
+                                    contact@tnna.vn</a>
+                            </p>
+                            <p>
+                                <a href="tel:0876338837" class="footer__info-text"><strong>Hotline</strong> : 0876338837</a>
+                            </p>                            
                         </div>
-                        <p>
-                            <a href="mailto:contact@tnna.vn" class="footer__info-text">Email : contact@tnna.vn</a>
-                        </p>
-                        <p>
-                            <a href="tel:0876338837" class="footer__info-text">Hotline : 0876338837</a>
-                        </p>
+                        <h3 class="footer__info-title footer__info-title--small">
+                            Follow Us
+                        </h3>
                         <div class="footer__social">
                             <a href=""><i class="fa-brands fa-facebook"></i></a>
                             <a href=""><i class="fa-brands fa-tiktok"></i></i></a>
@@ -529,31 +646,65 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-3 col-lg-6 col-6">
+                <div class="col-xl-2 col-md-3 col-lg-6 col-6">
                     <div class="footer__place">
-                        <h3 class="footer__place-title">
-                            Most Popular Place
+                        <h3 class="footer__title">
+                            Top destination
                         </h3>
-                        <ul class="footer__list-place">
-                            <li class="footer__item-place">Cầu sông Hàn</li>
-                            <li class="footer__item-place">Động Phong Nha</li>
-                            <li class="footer__item-place">Chợ Cồn</li>
-                            <li class="footer__item-place">Con kec</li>
-                            <li class="footer__item-place">Hội An</li>
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link">Cầu sông Hàn</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Động Phong Nha</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Chợ Cồn</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Đình Thái, Con Kec</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Hội An</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-md-3 col-lg-6 col-6">
+                    <div class="footer__place">
+                        <h3 class="footer__title">
+                            Đéo biết đặt gì
+                        </h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="" class="footer__link">About Us</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Blog</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Accont</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-3 col-lg-6 col-6">
                     <div class="footer__support">
-                        <h3 class="footer__support-title">
+                        <h3 class="footer__title">
                             Hỗ trợ
                         </h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Quản trị viên</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Nhân viên hỗ trợ</a>
+                            </li>
+                        </ul>
+                        <h3 class="footer__title footer__title--pay">
+                            Pay
+                        </h3>
+                        <figure class="footer__img-wrap">
+                            <img src="./assets/img/bidv.png" alt="" class="footer__img">
+                            <img src="./assets/img/bidv.png" alt="" class="footer__img">
+                            <img src="./assets/img/bidv.png" alt="" class="footer__img">
+                        </figure>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-     <!-- End Footer -->
+    <!-- End Footer -->
     <script src="./assets/bootstrap/jquery.slim.min.js"></script>
     <script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/app.js"></script>

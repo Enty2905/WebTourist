@@ -1,12 +1,14 @@
 // Scroll header
 const header__top = document.querySelector(".header__top-inner");
+const navbar__list = document.querySelector(".navbar__list");
 const headerOriginalTop = header__top.getBoundingClientRect().top;
 
 window.addEventListener("scroll", function () {
     if (window.pageYOffset === 0) {
         header__top.classList.remove("header__top--scrolled");
         header__top.style.transform = "translateY(-100%)";
-
+        header__top.style.color = "white";
+        header__top.classList.remove('header__top--retire');
         setTimeout(() => {
             header__top.style.transition = "transform .7s ease-in-out";
             header__top.style.transform = "translateY(0)";
@@ -15,31 +17,24 @@ window.addEventListener("scroll", function () {
         header__top.classList.add("header__top--scrolled");
         header__top.style.transition = "none";
         header__top.style.transform = "translateY(0)";
+        header__top.style.color = "black";
+        header__top.classList.add('header__top--retire');
     }
 });
 // Banner
-const bannerWrap = document.querySelector('.banner__img-wrap');
-const images = document.querySelectorAll('.banner__img');
-let slideInterval;
-const imgWidth = images[0].offsetWidth + 5;
+// const images = document.querySelectorAll('.banner__img');
+// let currentIndex = 0;
 
-function slideNextImage() {
-    bannerWrap.style.transition = 'transform 0.5s ease-in-out';
-    bannerWrap.style.transform = `translateX(-${imgWidth}px)`;
+// function showNextImage() {
+//     // Ẩn ảnh hiện tại
+//     images[currentIndex].classList.remove('banner__img--active');
 
-    setTimeout(() => {
-        bannerWrap.style.transition = 'none';
-        bannerWrap.appendChild(bannerWrap.firstElementChild);
-        bannerWrap.style.transform = `translateX(0)`;
-    }, 500);
-}
-slideInterval = setInterval(slideNextImage, 3000);
+//     // Tăng index và reset nếu cần
+//     currentIndex = (currentIndex + 1) % images.length;
 
-bannerWrap.addEventListener('mouseenter', () => {
-    clearInterval(slideInterval);
-});
+//     // Hiển thị ảnh tiếp theo
+//     images[currentIndex].classList.add('banner__img--active');
+// }
 
-bannerWrap.addEventListener('mouseleave', () => {
-    slideInterval = setInterval(slideNextImage, 3000);
-});
-
+// // Chạy slide mỗi 2 giây
+// setInterval(showNextImage, 10000);

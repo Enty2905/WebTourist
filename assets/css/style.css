@@ -24,84 +24,121 @@
 }
 
 /* Header */
+.header__info {
+    padding: 5px 100px;
+    background-color: blue;
+}
+
+.header__info-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__contact-list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header__contact-item {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header__contact-text {
+    color: currentColor;
+}
+
+.header__social-item {
+    color: white;
+    margin-right: 10px;
+}
+
 .header__top-inner {
+    color: white;
     position: fixed;
     width: 100%;
     z-index: 100;
     padding: 10px 100px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    transition: all .5s ease;
+    border-bottom: 1px solid grey;
+}
+
+.header__top--retire {
+    margin: -27px 0 0;
 }
 
 .header__top--scrolled {
     background: #ffffffd5;
-    border-bottom: 1px solid grey;
+    transition: all .5s ease;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+.navbar {
+    margin-right: 32%;
 }
 
 .navbar__list {
+    color: currentColor;
+    transition: all .5s ease;
     display: flex;
     align-items: center;
     gap: 30px;
 }
 
 .navbar__link {
-    color: black;
+    color: currentColor;
+    font-size: 2rem;
     font-weight: 500;
     text-decoration: none;
     transition: .5s all ease;
 }
 
 .navbar__link:hover {
-    color: black;
+    color: currentColor;
     text-decoration: none;
     text-shadow: 1px 0px 1px currentColor;
 }
 
+.header__account {
+    color: currentColor;
+    font-size: 2rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: .5s all ease;
+}
+
+.header__account:hover {
+    color: currentColor;
+    text-shadow: 1px 0px 1px currentColor;
+}
 
 .header__banner {
     position: relative;
-    padding: 0 0 20px;
 }
 
 .header__title {
-    position: relative;
-    transform: translateY(120px);
+    position: absolute;
     z-index: 2;
-    font-size: 5rem;
-    font-weight: 700;
-    color: var(--color-text);
-    text-align: center;
-}
-
-
-.header__banner::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 220px;
-    left: 0;
-    top: 0;
-    background-color: #F5F5F5;
-    border-radius: 0 0 50% 50%;
-    z-index: 1;
-}
-
-.header__banner::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 130px;
-    left: 0;
-    bottom: 0;
-    background-color: #F5F5F5;
-    border-radius: 50% 50% 0 0;
-    z-index: 1;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 9rem;
 }
 
 .banner {
-    width: 100%;
-    height: 850px;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
     overflow-x: auto;
     overflow-y: hidden;
     scrollbar-width: none;
@@ -109,46 +146,29 @@
     scroll-behavior: smooth;
     justify-content: center;
     background-color: #437af28c;
-    position: relative;
 }
 
 .banner__img-wrap {
-    display: flex;
-    gap: 20px;
-    transition: transform 0.5s ease-in-out;
-    transform: translateX(0);
-    position: absolute;
-    left: -11%;
-}
-
-.banner__img-wrap:hover .banner__img {
-    opacity: 0.7;
     position: relative;
+    width: 100vs;
+    height: 100vh;
 }
 
 .banner__img {
-    width: 350px;
-    height: 850px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    flex-shrink: 0;
-    transition: all 0.4s ease-in-out;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    user-select: none;
+    pointer-events: none;
 }
 
-
-.banner__img-wrap .banner__img:hover {
-    transform: scale(1.05);
+.banner__img--active {
     opacity: 1;
-    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-}
-
-@keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
 }
 
 /* Explore Adventure" */
@@ -413,6 +433,11 @@
 .highlights-video {
     padding: 100px 0;
     background-image: url(../img/Ba_Na_Hill_DaNang.jpg);
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(1);
 }
 
 .highlights-video__title {
@@ -437,19 +462,119 @@
 }
 
 /* End Highlights Video */
+/* None */
+.guides {
+    padding: 50px 0;
+
+}
+
+.guides__blog-main {
+    display: flex;
+    gap: 20px;
+}
+
+.guides__img-wrap {
+    width: 250px;
+    height: 450px;
+    flex-shrink: 0;
+}
+
+.guides__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.guides__date {
+    margin-left: -5px;
+    margin-bottom: 20px;
+    color: var(--text-lighter);
+}
+
+.guides__title {
+    margin-bottom: 30px;
+    color: var(--color-text);
+    font-size: 2.8rem;
+    font-weight: 500;
+}
+
+.guides__desc {
+    margin-bottom: 30px;
+    color: var(--text-lighter);
+    font-size: 1.7rem;
+    font-style: italic;
+    text-align: justify;
+}
+
+.guides__item {
+    padding: 20px 0;
+    display: flex;
+    gap: 15px;
+    border-bottom: 1px dashed grey;
+}
+
+.guides__item:first-child {
+    padding-top: 0;
+}
+
+.guides__img-wrap--small {
+    width: 200px;
+    height: 150px;
+}
+
+.guides__img--small {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.guides__blog-info--small {
+    padding: 20px 0;
+}
+
+.guides__date--small {
+    margin-top: -10px;
+    font-size: 1.5rem;
+}
+
+.guides__title--small {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+.guides__action {
+    display: flex;
+    align-items: center;
+}
+
+.guides__action:hover {
+    text-decoration: none;
+}
+
+.guides__action-text {
+    margin-right: 5px;
+}
+
+/* End None */
 /* Review */
 .review {
+    background-image: url(../img/upcoming-bg.jpg);
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 100px 0;
 }
 
 .review__item {
     padding: 40px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    background-color: white;
     border-radius: 10px;
 }
 
 .review__desc {
-    margin-bottom: 20px;
     text-align: justify;
     color: #666;
     font-size: 1.6rem;
@@ -457,6 +582,7 @@
 }
 
 .review__info {
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -484,8 +610,14 @@
 /* End Review */
 /* Footer */
 .footer {
-    padding: 100px 0;
-    background: #029E9D;
+    padding: 50px 100px;
+    background: #40514E;
+}
+.footer__info-detail{
+    margin-bottom: 10px;
+}
+.footer__info strong {
+    font-weight: 600;
 }
 
 .footer__info-title {
@@ -501,13 +633,7 @@
     color: white;
     font-size: 1.7rem;
     font-weight: 500;
-}
-
-.footer__info-text:hover {
-    color: white;
-    text-decoration: none;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    font-weight: 900;
+    transition: all .5s ease;
 }
 
 .footer__social {
@@ -521,18 +647,43 @@
     color: white;
 }
 
-.footer__place-title , .footer__support-title{
+.footer__title {
     margin-bottom: 20px;
     color: white;
     font-size: 2.2rem;
     font-weight: 600;
 }
 
-.footer__item-place {
+.footer__link,
+.footer__support-link {
+    display: block;
     margin-bottom: 10px;
+    transition: all .5s ease;
     color: white;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: 500;
 }
 
+.footer__info-text:hover,
+.footer__link:hover,
+.footer__support-link:hover {
+    transition: all .5s ease;
+    color: white;
+    text-decoration: none;
+    text-shadow: 1px 0px 1px currentColor;
+    cursor: pointer;
+}
+.footer__img-wrap{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100px;
+}
+.footer__img{
+    width: 100%;
+}
+.footer__title--pay{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
 /* End Footer */
