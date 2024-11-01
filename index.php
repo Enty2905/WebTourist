@@ -21,41 +21,6 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <!-- Header info -->
-        <div class="header__info">
-            <div class="container__fluid">
-                <div class="header__info-inner">
-                    <div class="header__contact">
-                        <div class="header__contact-list">
-                            <div class="header__contact-item">
-                                <div class="header__contact-icon">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
-                                <a href="mailto:disanmientrung@dsmt.vn" class="header__contact-text">
-                                    disanmientrung@dsmt.vn
-                                </a>
-                            </div>
-                            <div class="header__contact-item">
-                                <div class="header__contact-icon">
-                                    <i class="fa-solid fa-phone"></i>
-                                </div>
-                                <a href="tel:0705974995" class="header__contact-text">
-                                    0705974995
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="header__socail">
-                        <div class="header__social-list">
-                            <a href="" class="header__social-item"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="" class="header__social-item"><i class="fa-brands fa-tiktok"></i></i></a>
-                            <a href="" class="header__social-item"><i class="fa-brands fa-instagram"></i></i></a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
         <!-- Header top -->
         <div class="header__top">
             <div class="container__fluid">
@@ -66,10 +31,10 @@
                     <nav class="navbar">
                         <ul class="navbar__list">
                             <li class="navbar__item">
-                                <a href="" class="navbar__link">Home</a>
+                                <a href="./" class="navbar__link navbar__link--active">Home</a>
                             </li>
                             <li class="navbar__item">
-                                <a href="" class="navbar__link">About Us</a>
+                                <a href="./html/about.html" class="navbar__link">About Us</a>
                             </li>
                             <li class="navbar__item">
                                 <a href="" class="navbar__link">Destinations </a>
@@ -633,10 +598,11 @@
                                     contact@tnna.vn</a>
                             </p>
                             <p>
-                                <a href="tel:0876338837" class="footer__info-text"><strong>Hotline</strong> : 0876338837</a>
-                            </p>                            
+                                <a href="tel:0876338837" class="footer__info-text"><strong>Hotline</strong> :
+                                    0876338837</a>
+                            </p>
                         </div>
-                        <h3 class="footer__info-title footer__info-title--small">
+                        <h3 class="footer__title">
                             Follow Us
                         </h3>
                         <div class="footer__social">

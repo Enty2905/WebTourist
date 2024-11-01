@@ -23,6 +23,35 @@
     color: #FDC703;
 }
 
+/* Stats */
+.stats {
+    padding: 50px 0;
+    background-color: #1F2223;
+}
+
+.stats__item {
+    padding: 30px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #181A1B;
+    border-radius: 10px;
+}
+
+.stats__label,
+.stats__value {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.stats__value {
+    margin: 0;
+    font-weight: 500;
+}
+
 /* Header */
 .header__info {
     padding: 5px 100px;
@@ -69,10 +98,6 @@
     border-bottom: 1px solid grey;
 }
 
-.header__top--retire {
-    margin: -27px 0 0;
-}
-
 .header__top--scrolled {
     background: #ffffffd5;
     transition: all .5s ease;
@@ -103,6 +128,12 @@
 }
 
 .navbar__link:hover {
+    color: currentColor;
+    text-decoration: none;
+    text-shadow: 1px 0px 1px currentColor;
+}
+
+.navbar__link--active {
     color: currentColor;
     text-decoration: none;
     text-shadow: 1px 0px 1px currentColor;
@@ -150,7 +181,7 @@
 
 .banner__img-wrap {
     position: relative;
-    width: 100vs;
+    width: 100vw;
     height: 100vh;
 }
 
@@ -559,12 +590,12 @@
 /* End None */
 /* Review */
 .review {
+    padding: 100px 0;
     background-image: url(../img/upcoming-bg.jpg);
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 100px 0;
 }
 
 .review__item {
@@ -613,9 +644,11 @@
     padding: 50px 100px;
     background: #40514E;
 }
-.footer__info-detail{
+
+.footer__info-detail {
     margin-bottom: 10px;
 }
+
 .footer__info strong {
     font-weight: 600;
 }
@@ -673,17 +706,21 @@
     text-shadow: 1px 0px 1px currentColor;
     cursor: pointer;
 }
-.footer__img-wrap{
+
+.footer__img-wrap {
     display: flex;
     align-items: center;
     gap: 20px;
     width: 100px;
 }
-.footer__img{
+
+.footer__img {
     width: 100%;
 }
-.footer__title--pay{
+
+.footer__title--pay {
     margin-top: 30px;
     margin-bottom: 10px;
 }
+
 /* End Footer */

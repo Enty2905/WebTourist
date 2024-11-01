@@ -8,7 +8,6 @@ window.addEventListener("scroll", function () {
         header__top.classList.remove("header__top--scrolled");
         header__top.style.transform = "translateY(-100%)";
         header__top.style.color = "white";
-        header__top.classList.remove('header__top--retire');
         setTimeout(() => {
             header__top.style.transition = "transform .7s ease-in-out";
             header__top.style.transform = "translateY(0)";
@@ -18,7 +17,6 @@ window.addEventListener("scroll", function () {
         header__top.style.transition = "none";
         header__top.style.transform = "translateY(0)";
         header__top.style.color = "black";
-        header__top.classList.add('header__top--retire');
     }
 });
 // Banner
