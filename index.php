@@ -34,19 +34,19 @@
                                 <a href="./" class="navbar__link navbar__link--active">Home</a>
                             </li>
                             <li class="navbar__item">
-                                <a href="./html/about.html" class="navbar__link">About Us</a>
+                                <a href="./view/about.php" class="navbar__link">About Us</a>
                             </li>
                             <li class="navbar__item">
-                                <a href="" class="navbar__link">Destinations </a>
+                                <a href="./view/destinations.php" class="navbar__link">Destinations </a>
                             </li>
                             <li class="navbar__item">
-                                <a href="" class="navbar__link">Tour </a>
+                                <a href="./view/tour.php" class="navbar__link">Tour </a>
                             </li>
                             <li class="navbar__item">
-                                <a href="" class="navbar__link">Blog </a>
+                                <a href="./view/blog.php" class="navbar__link">Blog </a>
                             </li>
                             <li class="navbar__item">
-                                <a href="" class="navbar__link">Contact Us </a>
+                                <a href="./view/contact.php" class="navbar__link">Contact Us </a>
                             </li>
                         </ul>
                     </nav>
@@ -61,12 +61,12 @@
             <h1 class="header__title">
                 Wondrous City Tours
             </h1>
-            <figure class="banner__img-wrap">
-                <img src="./assets/img/Song_Huong_Hue.jpg" alt="" class="banner__img banner__img--active">
-                <img src="./assets/img/Dam_Pha_Tam_Giang_Hue.jpg" alt="" class="banner__img active">
-                <img src="./assets/img/Cau_Rong_DaNang.jpg" alt="" class="banner__img">
-                <img src="./assets/img/Cau_Thuan_Phuoc_DaNang.jpg" alt="" class="banner__img">
-                <img src="./assets/img/Bai_Tam_Non_Nuoc_DaNang.jpg" alt="" class="banner__img">
+            <figure class="header__banner-img-wrap">
+                <img src="./assets/img/Song_Huong_Hue.jpg" alt="" class="header__banner-img header__banner-img--active">
+                <img src="./assets/img/Dam_Pha_Tam_Giang_Hue.jpg" alt="" class="header__banner-img active">
+                <img src="./assets/img/Cau_Rong_DaNang.jpg" alt="" class="header__banner-img">
+                <img src="./assets/img/Cau_Thuan_Phuoc_DaNang.jpg" alt="" class="header__banner-img">
+                <img src="./assets/img/Bai_Tam_Non_Nuoc_DaNang.jpg" alt="" class="header__banner-img">
             </figure>
         </section>
     </header>

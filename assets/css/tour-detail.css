@@ -1,0 +1,132 @@
+body{
+    background-color: #ECF0F5;
+}
+.tour-detail {
+    padding: 80px 0;
+}
+.tour-detail__section{
+    margin: 20px 0 10px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.281);
+    border-radius: 10px;
+}
+.tour-detail__top {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tour-detail__img-wrap {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 400px;
+}
+
+.tour-detail__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.281);
+}
+
+.tour-detail__thumb {
+    display: flex;
+    gap: 1.33%;
+    overflow: hidden;
+}
+
+.tour-detail__thumb-img {
+    flex-shrink: 0;
+    flex: 0 0 24%;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.281);
+}
+
+.tour-detail__title {
+    margin: 0 0 10px;
+    font-size: 3rem;
+}
+
+.tour-detail__desc {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+.tour-detail__hotel-img-wrap{
+    width: 1005;
+    height: 450px;
+}
+.tour-detail__hotel-img{
+    margin-bottom: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+.tour-detail__hotel-cap{
+    margin-top: 10px;
+    display: block;
+    color: var(--color-text);
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.tour-detail__hotel-cap:hover{
+    color: var(--color-text);
+    text-shadow: 1px 0px 1px currentColor;
+}
+.tour-detail__info {
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.tour-detail__price {
+    margin-bottom: 10px;
+    list-style-type: "\1F44D";
+    flex-shrink: 0;
+    flex: 0 0 50%;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.tour-detail__price strong {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.timetable-item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.timetable__img {
+    width: 150px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.timetable-info__time {
+    margin-bottom: 5px;
+    font-size: 1.8rem;
+    font-style: italic;
+}
+
+.timetable-info__desc {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.tour__img-wrap{
+    height: 175px;
+}
+.tour__location{
+    font-size: 2rem;
+}

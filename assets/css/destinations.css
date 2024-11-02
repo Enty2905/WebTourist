@@ -1,26 +1,3 @@
-.destinations-banner {
-    width: 100vw;
-    height: 37vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(../img/Ba_Na_Hill_DaNang.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-}
-
-.destinations-banner__inner {
-    width: 100%;
-    height: 100%;
-}
-
-.destinations-banner__title,
-.destinations-banner__desc {
-    /* color: white; */
-    text-align: center;
-}
 /*  */
 .destinations {
     padding: 80px 100px;

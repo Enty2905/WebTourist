@@ -41,19 +41,19 @@ $positiveFeedback = 95;
                                 <a href="../" class="navbar__link">Home</a>
                             </li>
                             <li class="navbar__item">
-                                <a href="" class="navbar__link navbar__link--active">About Us</a>
+                                <a href="./about.php" class="navbar__link navbar__link--active">About Us</a>
                             </li>
                             <li class="navbar__item">
-                                <a href="" class="navbar__link">Destinations </a>
+                                <a href="./destinations.php" class="navbar__link">Destinations </a>
                             </li>
                             <li class="navbar__item">
-                                <a href="" class="navbar__link">Tour </a>
+                                <a href="./tour.php" class="navbar__link">Tour </a>
                             </li>
                             <li class="navbar__item">
-                                <a href="" class="navbar__link">Blog </a>
+                                <a href="./blog.php" class="navbar__link">Blog </a>
                             </li>
                             <li class="navbar__item">
-                                <a href="" class="navbar__link">Contact Us </a>
+                                <a href="./contact.php" class="navbar__link">Contact Us </a>
                             </li>
                         </ul>
                     </nav>

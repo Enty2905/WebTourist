@@ -1,3 +1,9 @@
+<?php
+$visitors = 200;
+$tours = 50;
+$fiveStarReviews = 200;
+$positiveFeedback = 95;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +22,7 @@
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/contact.css">
+    <link rel="stylesheet" href="../assets/css/tour-detail.css">
 </head>
 
 <body>
@@ -41,13 +47,13 @@
                                 <a href="destinations.php" class="navbar__link">Destinations </a>
                             </li>
                             <li class="navbar__item">
-                                <a href="tour.php" class="navbar__link">Tour </a>
+                                <a href="tour.php" class="navbar__link navbar__link--active">Tour </a>
                             </li>
                             <li class="navbar__item">
                                 <a href="blog.php" class="navbar__link">Blog </a>
                             </li>
                             <li class="navbar__item">
-                                <a href="contact.php" class="navbar__link navbar__link--active">Contact Us </a>
+                                <a href="contact.php" class="navbar__link">Contact Us </a>
                             </li>
                         </ul>
                     </nav>
@@ -61,115 +67,116 @@
     <!-- End Header -->
     <!-- Main -->
     <main class="main">
-        <!-- Contact Banner -->
         <section class="banner">
             <div class="container">
                 <div class="banner__inner">
                     <p class="section-desc-heading banner__desc">
                         We'd love to hear from you!
                     </p>
-                    <h2 class="section-title banner__title">
-                        Contact Us
-                    </h2>
+                    <h1 class="section-title banner__title">
+                        Destinations Banner
+                    </h1>
                 </div>
             </div>
         </section>
-        <!-- Contact Form -->
-        <div class="contact">
+        <section class="tour-detail">
             <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-sm-12">
-                        <div class="inner-contact">
-                            <div class="contact__info">
-                                <div class="contact__top">
-                                    <p class="contact__desc section-desc-heading">
-                                        Would like to talk?
-                                    </p>
-                                    <h3 class="contact__title section-title">
-                                        Contact Details
-                                    </h3>
-                                </div>
-                                <p class="contact__desc-main">
-                                    If you have a story to share or a question that has not been answered on our website, please get in touch with us via contact details listed below or fill in the form on the right.
+                <div class="tour-detail__inner">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="tour-detail__top">
+                                <p class="section-desc-heading">
+                                    Đà Nẵng
                                 </p>
-                                <ul class="contact__list">
-                                    <li class="contact__item">
-                                        <div class="contact__icon-wrap">
-                                            <i class="fa-solid fa-location-dot"></i>
-                                        </div>
-                                        <p class="contact__text">
-                                            <span>Email</span> : <a class="contact__link" href="mailto:contact@tnna.vn">contact@tnna.vn</a>
-                                        </p>
-                                    </li>
-                                    <li class="contact__item">
-                                        <div class="contact__icon-wrap">
-                                            <i class="fa-solid fa-location-dot"></i>
-                                        </div>
-                                        <p class="contact__text">
-                                            <span>Email</span> : <a class="contact__link" href="mailto:contact@tnna.vn">contact@tnna.vn</a>
-                                        </p>
-                                    </li>
-                                    <li class="contact__item">
-                                        <div class="contact__icon-wrap">
-                                            <i class="fa-solid fa-location-dot"></i>
-                                        </div>
-                                        <p class="contact__text">
-                                            <span>Email</span> : <a class="contact__link" href="mailto:contact@tnna.vn">contact@tnna.vn</a>
-                                        </p>
-                                    </li>
-                                </ul>
-                                <div class="contact__social">
-                                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-                                    <a href="https://www.tiktok.com/@ndt02092005?lang=vi-VN"><i class="fa-brands fa-tiktok"></i></i></a>
-                                    <a href="https://www.instagram.com/entyyy_29/"><i class="fa-brands fa-instagram"></i></i></a>
-                                </div>
+                                <h2 class="tour-detail__title section-title">
+                                    Đà Nẵng , Bãi Biển Mỹ Khê
+                                </h2>
                             </div>
                         </div>
-                    </div>
+                        <div class="col-8">
+                            <figure class="tour-detail__img-wrap">
+                                <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="tour-detail__img">
+                            </figure>
+                            <figure class="tour-detail__thumb">
+                                <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="tour-detail__thumb-img">
+                                <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="tour-detail__thumb-img">
+                                <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="tour-detail__thumb-img">
+                                <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="tour-detail__thumb-img">
+                                <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="tour-detail__thumb-img">
+                            </figure>
 
-                    <div class="col-xl-6 col-sm-12">
-                        <div class="contact-form">
-                            <div class="contact__top">
-                                <p class="contact__desc section-desc-heading">
-                                    Would like to talk?
+                            <p class="tour-detail__desc">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ab fugiat suscipit, non odio eaque harum nihil velit tenetur nostrum? Error amet odio doloremque nostrum quasi excepturi eius illum ullam.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ab fugiat suscipit, non odio eaque harum nihil velit tenetur nostrum? Error amet odio doloremque nostrum quasi excepturi eius illum ullam.
                                 </p>
-                                <h3 class="contact__title section-title">
-                                    Contact Details
-                                </h3>
+                            <div class="tour-detail__info">
+                                <p class="tour-detail__price">
+                                    $ 100
+                                </p>
+                                <div class="tour-detail__ratting">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="tour-detail__date">
+                                    10days
+                                </p>
                             </div>
-                            <form action="" method="post" autocomplete="on">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Số điện thoại" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
-                                        </div>
+
+                            <div class="tour-detail__experience">
+                                <p class="tour-detail__experience-desc">
+                                    - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, cupiditate facere et odit quod impedit culpa suscipit minima
+                                </p>
+                                <p class="tour-detail__experience-desc">
+                                    - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, cupiditate facere et odit quod impedit culpa suscipit minima
+                                </p>
+                                <p class="tour-detail__experience-desc">
+                                    - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, cupiditate facere et odit quod impedit culpa suscipit minima
+                                </p>
+                            </div>
+                            <div class="timetable">
+                                <div class="timetable-item">
+                                    <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="timetable__img">
+                                    <div class="timetable-info">
+                                        <h4 class="timetable-info__time">
+                                            Ngày 1
+                                        </h4>
+                                        <p class="timetable-info__desc">
+                                            Ăn trưa cùng chị nhà
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <textarea name="content" class="form-control" id="content" placeholder="Nội dung" rows="8" maxlength="600" required></textarea>
+                                <div class="timetable-item">
+                                    <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="timetable__img">
+                                    <div class="timetable-info">
+                                        <h4 class="timetable-info__time">
+                                            Ngày 2
+                                        </h4>
+                                        <p class="timetable-info__desc">
+                                            Ăn trưa cùng chị nhà
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="form-group" style="text-align: center;">
-                                    <button type="submit" class="contact__btn">
-                                        Submit
-                                    </button>
+                                <div class="timetable-item">
+                                    <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="timetable__img">
+                                    <div class="timetable-info">
+                                        <h4 class="timetable-info__time">
+                                            Ngày 3
+                                        </h4>
+                                        <p class="timetable-info__desc">
+                                            Ăn trưa cùng chị nhà
+                                        </p>
+                                    </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
+                        <div class="col-4"></div>
                     </div>
                 </div>
             </div>
-            <iframe class="contact__map" src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d11144.790398555191!2d108.24555237925955!3d15.994775983622931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d15.9909237!2d108.2441499!5e0!3m2!1sen!2s!4v1730477141680!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+        </section>
     </main>
     <!-- End Main -->
     <!-- Footer -->
@@ -234,7 +241,10 @@
                                 <a href="blog.php" class="footer__link">Blog</a>
                             </li>
                             <li class="footer__item">
-                                <a href="account.php" class="footer__link">Accont</a>
+                                <a href="blog.php" class="footer__link">Blog</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="account.php" class="footer__link">Account</a>
                             </li>
                         </ul>
                     </div>

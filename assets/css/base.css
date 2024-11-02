@@ -7,7 +7,7 @@ a {
 }
 
 :root {
-    --primary-color: ;
+    --primary-color: gray;
     --color-text: #2d373c;
     --text-lighter: #969BA1;
 }

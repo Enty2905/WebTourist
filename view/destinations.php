@@ -67,13 +67,13 @@ $positiveFeedback = 95;
     <!-- End Header -->
     <!-- Main -->
     <main class="main">
-        <section class="destinations-banner">
+        <section class="banner">
             <div class="container">
-                <div class="destinations-banner__inner">
-                    <p class="section-desc-heading destinations-banner__desc">
+                <div class="banner__inner">
+                    <p class="section-desc-heading banner__desc">
                         We'd love to hear from you!
                     </p>
-                    <h1 class="section-title destinations-banner__title">
+                    <h1 class="section-title banner__title">
                         Destinations Banner
                     </h1>
                 </div>
