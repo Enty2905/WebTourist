@@ -1,9 +1,3 @@
-<?php
-$visitors = 200;
-$tours = 50;
-$fiveStarReviews = 200;
-$positiveFeedback = 95;
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +16,7 @@ $positiveFeedback = 95;
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/tour.css">
     <link rel="stylesheet" href="../assets/css/tour-detail.css">
 </head>
 
@@ -88,8 +83,8 @@ $positiveFeedback = 95;
                                 <p class="section-desc-heading">
                                     Đà Nẵng
                                 </p>
-                                <h2 class="tour-detail__title section-title">
-                                    Đà Nẵng , Bãi Biển Mỹ Khê
+                                <h2 class="tour-detail__title-top section-title">
+                                    Đà Nẵng, Bãi Biển Mỹ Khê
                                 </h2>
                             </div>
                         </div>
@@ -104,79 +99,197 @@ $positiveFeedback = 95;
                                 <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="tour-detail__thumb-img">
                                 <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="tour-detail__thumb-img">
                             </figure>
-
-                            <p class="tour-detail__desc">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ab fugiat suscipit, non odio eaque harum nihil velit tenetur nostrum? Error amet odio doloremque nostrum quasi excepturi eius illum ullam.
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ab fugiat suscipit, non odio eaque harum nihil velit tenetur nostrum? Error amet odio doloremque nostrum quasi excepturi eius illum ullam.
-                                </p>
-                            <div class="tour-detail__info">
-                                <p class="tour-detail__price">
-                                    $ 100
-                                </p>
-                                <div class="tour-detail__ratting">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
-                                <p class="tour-detail__date">
-                                    10days
+                            <div class="tour-detail__section">
+                                <h3 class="tour-detail__title section-title">
+                                    Khái niệm
+                                </h3>
+                                <p class="tour-detail__desc">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ab fugiat
+                                    suscipit,
+                                    non odio eaque harum nihil velit tenetur nostrum? Error amet odio doloremque nostrum
+                                    quasi excepturi eius illum ullam.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ab fugiat
+                                    suscipit,
+                                    non odio eaque harum nihil velit tenetur nostrum? Error amet odio doloremque nostrum
+                                    quasi excepturi eius illum ullam.
                                 </p>
                             </div>
-
-                            <div class="tour-detail__experience">
-                                <p class="tour-detail__experience-desc">
-                                    - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, cupiditate facere et odit quod impedit culpa suscipit minima
-                                </p>
-                                <p class="tour-detail__experience-desc">
-                                    - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, cupiditate facere et odit quod impedit culpa suscipit minima
-                                </p>
-                                <p class="tour-detail__experience-desc">
-                                    - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, cupiditate facere et odit quod impedit culpa suscipit minima
-                                </p>
+                            <div class="tour-detail__section">
+                                <h3 class="tour-detail__title section-title">
+                                    Chuyến đi của chúng tôi có gì ?
+                                </h3>
+                                <div class="tour-detail__experience">
+                                    <p class="tour-detail__desc">
+                                        - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, cupiditate
+                                        facere et odit quod impedit culpa suscipit minima
+                                    </p>
+                                    <p class="tour-detail__desc">
+                                        - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, cupiditate
+                                        facere et odit quod impedit culpa suscipit minima
+                                    </p>
+                                    <p class="tour-detail__desc">
+                                        - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, cupiditate
+                                        facere et odit quod impedit culpa suscipit minima
+                                    </p>
+                                </div>
                             </div>
-                            <div class="timetable">
-                                <div class="timetable-item">
-                                    <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="timetable__img">
-                                    <div class="timetable-info">
-                                        <h4 class="timetable-info__time">
-                                            Ngày 1
-                                        </h4>
-                                        <p class="timetable-info__desc">
-                                            Ăn trưa cùng chị nhà
-                                        </p>
+                            <div class="tour-detail__section">
+                                <h3 class="tour-detail__title section-title">
+                                    Chương trình
+                                </h3>
+                                <div class="timetable">
+                                    <div class="timetable-item">
+                                        <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="timetable__img">
+                                        <div class="timetable-info">
+                                            <h4 class="timetable-info__time">
+                                                Ngày 1
+                                            </h4>
+                                            <p class="timetable-info__desc">
+                                                Ăn trưa cùng chị nhà
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="timetable-item">
+                                        <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="timetable__img">
+                                        <div class="timetable-info">
+                                            <h4 class="timetable-info__time">
+                                                Ngày 2
+                                            </h4>
+                                            <p class="timetable-info__desc">
+                                                Ăn trưa cùng chị nhà
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="timetable-item">
+                                        <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="timetable__img">
+                                        <div class="timetable-info">
+                                            <h4 class="timetable-info__time">
+                                                Ngày 3
+                                            </h4>
+                                            <p class="timetable-info__desc">
+                                                Ăn trưa cùng chị nhà
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="timetable-item">
-                                    <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="timetable__img">
-                                    <div class="timetable-info">
-                                        <h4 class="timetable-info__time">
-                                            Ngày 2
-                                        </h4>
-                                        <p class="timetable-info__desc">
-                                            Ăn trưa cùng chị nhà
-                                        </p>
+                            </div>
+                            <div class="tour-detail__section">
+                                <h3 class="tour-detail__title section-title">
+                                    Khách sạn
+                                </h3>
+                                <div class="tour-detail__hotel">
+                                    <figure class="tour-detail__hotel-img-wrap">
+                                        <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt=""
+                                            class="tour-detail__hotel-img">
+                                    </figure>
+                                    <a href="" class="tour-detail__hotel-cap">
+                                        Khách Sạn 5* của anh Thé đẹp zai vô cùng tận
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="tour-detail__section">
+                                <h3 class="tour-detail__title section-title">
+                                    Giá cả như lào
+                                </h3>
+                                <ul class="tour-detail__info">
+                                    <li class="tour-detail__price">
+                                        <strong>1 người : </strong> <span> 100$ </span>
+                                    </li>
+                                    <li class="tour-detail__price">
+                                        <strong>2 người : </strong> <span> 150$ </span>
+                                    </li>
+                                    <li class="tour-detail__price">
+                                        <strong>4 người : </strong> <span> 300$ </span>
+                                    </li>
+                                    <li class="tour-detail__price">
+                                        <strong>Đoàn 15 người : </strong> <span> 1300$ </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tour-detail__section">
+                                <h3 class="tour-detail__title section-title">
+                                    Những Điều cần lưu ý
+                                </h3>
+                                <div class="tour-detail__note">
+                                    <p class="tour-detail__desc">
+                                        - Di chuyển chuyển bằng ô tô du lịch của Cty Thaidepzai
+                                    </p>
+                                    <p class="tour-detail__desc">
+                                        - Cũng có xe máy cho những người thì đi xe máy
+                                    </p>
+                                    <p class="tour-detail__desc">
+                                        - Tổ chức ăn uống theo nhu cầu của khách
+                                    </p>
+                                    <p class="tour-detail__desc">
+                                        - Trưởng đoàn và hướng dẫn viên địa phương phục vụ suốt tuyến.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="tour__item">
+                                <figure class="tour__img-wrap">
+                                    <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="tour__img">
+                                </figure>
+                                <div class="tour__item-body">
+                                    <p class="tour__location">Đà Nẵng</p>
+                                    <p class="tour__price tour__text">$ 100</p>
+                                    <div class="tour__item-info">
+                                        <p class="tour__type tour__text">Adventure</p>
+                                        <p class="tour__duration tour__text">2-3 Days</p>
+                                    </div>
+                                    <div class="tour__actions">
+                                        <div class="tour__rating">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <a class="tour__action tour__text">Details</a>
                                     </div>
                                 </div>
-                                <div class="timetable-item">
-                                    <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="timetable__img">
-                                    <div class="timetable-info">
-                                        <h4 class="timetable-info__time">
-                                            Ngày 3
-                                        </h4>
-                                        <p class="timetable-info__desc">
-                                            Ăn trưa cùng chị nhà
-                                        </p>
+                            </div>
+                            <div class="tour__item">
+                                <figure class="tour__img-wrap">
+                                    <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="tour__img">
+                                </figure>
+                                <div class="tour__item-body">
+                                    <p class="tour__location">Đà Nẵng</p>
+                                    <p class="tour__price tour__text">$ 100</p>
+                                    <div class="tour__item-info">
+                                        <p class="tour__type tour__text">Adventure</p>
+                                        <p class="tour__duration tour__text">2-3 Days</p>
+                                    </div>
+                                    <div class="tour__actions">
+                                        <div class="tour__rating">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <a class="tour__action tour__text">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tour__item">
+                                <figure class="tour__img-wrap">
+                                    <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="tour__img">
+                                </figure>
+                                <div class="tour__item-body">
+                                    <p class="tour__location">Đà Nẵng</p>
+                                    <p class="tour__price tour__text">$ 100</p>
+                                    <div class="tour__item-info">
+                                        <p class="tour__type tour__text">Adventure</p>
+                                        <p class="tour__duration tour__text">2-3 Days</p>
+                                    </div>
+                                    <div class="tour__actions">
+                                        <div class="tour__rating">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <a class="tour__action tour__text">Details</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4"></div>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
     <!-- End Main -->
     <!-- Footer -->
@@ -209,8 +322,10 @@ $positiveFeedback = 95;
                         </h3>
                         <div class="footer__social">
                             <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="https://www.tiktok.com/@ndt02092005?lang=vi-VN"><i class="fa-brands fa-tiktok"></i></i></a>
-                            <a href="https://www.instagram.com/entyyy_29/"><i class="fa-brands fa-instagram"></i></i></a>
+                            <a href="https://www.tiktok.com/@ndt02092005?lang=vi-VN"><i
+                                    class="fa-brands fa-tiktok"></i></i></a>
+                            <a href="https://www.instagram.com/entyyy_29/"><i
+                                    class="fa-brands fa-instagram"></i></i></a>
                         </div>
                     </div>
                 </div>
