@@ -162,7 +162,70 @@ $positiveFeedback = 95;
                         <div class="col-4">
                             <div class="tour__item">
                                 <figure class="tour__img-wrap">
-                                    <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="tour__img">
+                                    <img src="../assets/img/Phong_Nha_Ke_Bang_QuangBinh.jpg" alt="" class="tour__img">
+                                </figure>
+                                <div class="tour__item-body">
+                                    <p class="tour__location">Quảng Bình</p>
+                                    <p class="tour__price tour__text">$ 100</p>
+                                    <div class="tour__item-info">
+                                        <p class="tour__type tour__text">Adventure</p>
+                                        <p class="tour__duration tour__text">2-3 Days</p>
+                                    </div>
+                                    <div class="tour__actions">
+                                        <div class="tour__rating">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <a class="tour__action tour__text">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="tour__item">
+                                <figure class="tour__img-wrap">
+                                    <img src="../assets/img/Cau_Trang_Tien_Hue.jpg" alt="" class="tour__img">
+                                </figure>
+                                <div class="tour__item-body">
+                                    <p class="tour__location">Huế</p>
+                                    <p class="tour__price tour__text">$ 100</p>
+                                    <div class="tour__item-info">
+                                        <p class="tour__type tour__text">Adventure</p>
+                                        <p class="tour__duration tour__text">2-3 Days</p>
+                                    </div>
+                                    <div class="tour__actions">
+                                        <div class="tour__rating">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <a class="tour__action tour__text">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="tour__item">
+                                <figure class="tour__img-wrap">
+                                    <img src="../assets/img/Bien_Lang_Co_Hue.jpg" alt="" class="tour__img">
+                                </figure>
+                                <div class="tour__item-body">
+                                    <p class="tour__location">Huế</p>
+                                    <p class="tour__price tour__text">$ 100</p>
+                                    <div class="tour__item-info">
+                                        <p class="tour__type tour__text">Adventure</p>
+                                        <p class="tour__duration tour__text">2-3 Days</p>
+                                    </div>
+                                    <div class="tour__actions">
+                                        <div class="tour__rating">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <a class="tour__action tour__text">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="tour__item">
+                                <figure class="tour__img-wrap">
+                                    <img src="../assets/img/Da_Nang1.jpg" alt="" class="tour__img">
                                 </figure>
                                 <div class="tour__item-body">
                                     <p class="tour__location">Đà Nẵng</p>
@@ -183,10 +246,10 @@ $positiveFeedback = 95;
                         <div class="col-4">
                             <div class="tour__item">
                                 <figure class="tour__img-wrap">
-                                    <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="tour__img">
+                                    <img src="../assets/img/Dien_Hon_Chen_HUe.jpg" alt="" class="tour__img">
                                 </figure>
                                 <div class="tour__item-body">
-                                    <p class="tour__location">Đà Nẵng</p>
+                                    <p class="tour__location">Hue</p>
                                     <p class="tour__price tour__text">$ 100</p>
                                     <div class="tour__item-info">
                                         <p class="tour__type tour__text">Adventure</p>
@@ -204,70 +267,7 @@ $positiveFeedback = 95;
                         <div class="col-4">
                             <div class="tour__item">
                                 <figure class="tour__img-wrap">
-                                    <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="tour__img">
-                                </figure>
-                                <div class="tour__item-body">
-                                    <p class="tour__location">Đà Nẵng</p>
-                                    <p class="tour__price tour__text">$ 100</p>
-                                    <div class="tour__item-info">
-                                        <p class="tour__type tour__text">Adventure</p>
-                                        <p class="tour__duration tour__text">2-3 Days</p>
-                                    </div>
-                                    <div class="tour__actions">
-                                        <div class="tour__rating">
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                        </div>
-                                        <a class="tour__action tour__text">Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="tour__item">
-                                <figure class="tour__img-wrap">
-                                    <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="tour__img">
-                                </figure>
-                                <div class="tour__item-body">
-                                    <p class="tour__location">Đà Nẵng</p>
-                                    <p class="tour__price tour__text">$ 100</p>
-                                    <div class="tour__item-info">
-                                        <p class="tour__type tour__text">Adventure</p>
-                                        <p class="tour__duration tour__text">2-3 Days</p>
-                                    </div>
-                                    <div class="tour__actions">
-                                        <div class="tour__rating">
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                        </div>
-                                        <a class="tour__action tour__text">Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="tour__item">
-                                <figure class="tour__img-wrap">
-                                    <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="tour__img">
-                                </figure>
-                                <div class="tour__item-body">
-                                    <p class="tour__location">Đà Nẵng</p>
-                                    <p class="tour__price tour__text">$ 100</p>
-                                    <div class="tour__item-info">
-                                        <p class="tour__type tour__text">Adventure</p>
-                                        <p class="tour__duration tour__text">2-3 Days</p>
-                                    </div>
-                                    <div class="tour__actions">
-                                        <div class="tour__rating">
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                        </div>
-                                        <a class="tour__action tour__text">Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="tour__item">
-                                <figure class="tour__img-wrap">
-                                    <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="tour__img">
+                                    <img src="../assets/img/Song_Han_DaNang.jpg" alt="" class="tour__img">
                                 </figure>
                                 <div class="tour__item-body">
                                     <p class="tour__location">Đà Nẵng</p>

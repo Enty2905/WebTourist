@@ -92,51 +92,51 @@ $positiveFeedback = 95;
                 <div class="destinations__gird">
                     <div class="destinations__box destinations__box--large">
                         <figure class="destinations__img-wrap">
-                            <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="destinations__img">
+                            <img src="../assets/img/Quang_Binh1.jpg" alt="" class="destinations__img">
                         </figure>
                         <div class="destinations__info">
                             <h3 class="destinations__location section-title">
-                                Đà Nẵng
+                                Động Thiên Đường
                             </h3>
                         </div>
                     </div>
 
                     <div class="destinations__box destinations__box--small">
                         <figure class="destinations__img-wrap">
-                            <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="destinations__img">
+                            <img src="../assets/img/Truong_Quoc_Hoc_Hue.jpg" alt="" class="destinations__img">
                         </figure>
                         <div class="destinations__info">
                             <h3 class="destinations__location section-title">
-                                Đà Nẵng
+                                Trường Quốc Học Huế 
                             </h3>
                         </div>
                     </div>
 
                     <div class="destinations__box destinations__box--small">
                         <figure class="destinations__img-wrap">
-                            <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="destinations__img">
+                            <img src="../assets/img/Suoi_Bang_QuangBinh.jpg" alt="" class="destinations__img">
                         </figure>
                         <div class="destinations__info">
                             <h3 class="destinations__location section-title">
-                                Đà Nẵng
+                                Suối Bang
                             </h3>
                         </div>
                     </div>
 
                     <div class="destinations__box destinations__box--high">
                         <figure class="destinations__img-wrap">
-                            <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="destinations__img">
+                            <img src="../assets/img/Tuong_Dai_Me_Suot_QuangBinh.jpg" alt="" class="destinations__img">
                         </figure>
                         <div class="destinations__info">
                             <h3 class="destinations__location section-title">
-                                Đà Nẵng
+                                Tượng đài Mẹ Suốt
                             </h3>
                         </div>
                     </div>
 
                     <div class="destinations__box destinations__box--medium">
                         <figure class="destinations__img-wrap">
-                            <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="destinations__img">
+                            <img src="../assets/img/Vuon_Quoc_Gia_Bach_Ma_Hue.jpg" alt="" class="destinations__img">
                         </figure>
                         <div class="destinations__info">
                             <h3 class="destinations__location section-title">
@@ -147,7 +147,7 @@ $positiveFeedback = 95;
 
                     <div class="destinations__box destinations__box--large">
                         <figure class="destinations__img-wrap">
-                            <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="destinations__img">
+                            <img src="../assets/img/Song_Han_DaNang.jpg" alt="" class="destinations__img">
                         </figure>
                         <div class="destinations__info">
                             <h3 class="destinations__location section-title">

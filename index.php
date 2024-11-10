@@ -83,40 +83,40 @@
                         <div class="col-xl-3">
                             <article class="explore-adventure__box ">
                                 <figure class="explore-adventure__img-wrap">
-                                    <img src="./assets/img/Ba_Na_Hill_DaNang.jpg" class="explore-adventure__img" />
+                                    <img src="./assets/img/Suoi_Mooc_QuangBinh.jpg" class="explore-adventure__img" />
                                 </figure>
                                 <p class="explore-adventure__desc">
-                                    Tent Camping
+                                    Suối Moọc
                                 </p>
                             </article>
                         </div>
                         <div class="col-xl-3">
                             <article class="explore-adventure__box">
                                 <figure class="explore-adventure__img-wrap">
-                                    <img src="./assets/img/Ba_Na_Hill_DaNang.jpg" class="explore-adventure__img" />
+                                    <img src="./assets/img/Luot_Song.jpg" class="explore-adventure__img" />
                                 </figure>
                                 <p class="explore-adventure__desc">
-                                    Tent Camping
+                                    Chèo súp
                                 </p>
                             </article>
                         </div>
                         <div class="col-xl-3">
                             <article class="explore-adventure__box ">
                                 <figure class="explore-adventure__img-wrap">
-                                    <img src="./assets/img/Ba_Na_Hill_DaNang.jpg" class="explore-adventure__img" />
+                                    <img src="./assets/img/Du_Luon_DaNang.jpg" class="explore-adventure__img" />
                                 </figure>
                                 <p class="explore-adventure__desc">
-                                    Tent Camping
+                                    Dù lượn
                                 </p>
                             </article>
                         </div>
                         <div class="col-xl-3">
                             <article class="explore-adventure__box ">
                                 <figure class="explore-adventure__img-wrap">
-                                    <img src="./assets/img/Ba_Na_Hill_DaNang.jpg" class="explore-adventure__img" />
+                                    <img src="./assets/img/Am_Thuc_Hue.jpg" class="explore-adventure__img" />
                                 </figure>
                                 <p class="explore-adventure__desc">
-                                    Tent Camping
+                                    Ẩm thực
                                 </p>
                             </article>
                         </div>
@@ -138,7 +138,7 @@
                         <div class="col-6">
                             <article class="choose-place__item">
                                 <figure class="choose-place__img-wrap">
-                                    <img src="./assets/img/Ba_Na_Hill_DaNang.jpg" class="choose-place__img" />
+                                    <img src="./assets/img/Hue1.jpg" class="choose-place__img" />
                                 </figure>
                                 <div class="choose-place__text">
                                     <h4 class="choose-place__item-desc section-desc-heading">
@@ -153,11 +153,11 @@
                         <div class="col-6">
                             <article class="choose-place__item">
                                 <figure class="choose-place__img-wrap">
-                                    <img src="./assets/img/Ba_Na_Hill_DaNang.jpg" class="choose-place__img" />
+                                    <img src="./assets/img/Cau_Rong_DaNang.jpg" class="choose-place__img" />
                                 </figure>
                                 <div class="choose-place__text">
                                     <h4 class="choose-place__item-desc section-desc-heading">
-                                        Cầu vàng
+                                        Cầu rồng
                                     </h4>
                                     <h3 class="choose-place__item-title">
                                         Đà Nẵng
@@ -168,7 +168,7 @@
                         <div class="col-12">
                             <article class="choose-place__item">
                                 <figure class="choose-place__img-wrap">
-                                    <img src="./assets/img/Ba_Na_Hill_DaNang.jpg" class="choose-place__img" />
+                                    <img src="assets/img/Dong_Phong_Nha_QuangBinh.jpg" class="choose-place__img" />
                                 </figure>
                                 <div class="choose-place__text">
                                     <h4 class="choose-place__item-desc section-desc-heading">
@@ -271,14 +271,14 @@
                         <div class="col-4">
                             <div class="featured__item">
                                 <figure class="featured__img-wrap">
-                                    <img src="./assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="featured__img">
+                                    <img src="./assets/img/Thac_Da_Dam_Hue.jpg" alt="" class="featured__img">
                                 </figure>
                                 <div class="featured__item-body">
                                     <p class="featured__item-location">
                                         Huế
                                     </p>
                                     <h3 class="featured__item-title">
-                                        Kinh Thành Huế
+                                        Đầm Thác Đà
                                     </h3>
                                     <p class="featured__item-desc">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eligendi fugiat
@@ -309,14 +309,14 @@
                         <div class="col-4">
                             <div class="featured__item">
                                 <figure class="featured__img-wrap">
-                                    <img src="./assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="featured__img">
+                                    <img src="./assets/img/Suoi_Mooc_QuangBinh.jpg" alt="" class="featured__img">
                                 </figure>
                                 <div class="featured__item-body">
                                     <p class="featured__item-location">
-                                        Huế
+                                        Quảng Bình
                                     </p>
                                     <h3 class="featured__item-title">
-                                        Kinh Thành Huế
+                                        Suối Mooc
                                     </h3>
                                     <p class="featured__item-desc">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eligendi fugiat
@@ -347,14 +347,14 @@
                         <div class="col-4">
                             <div class="featured__item">
                                 <figure class="featured__img-wrap">
-                                    <img src="./assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="featured__img">
+                                    <img src="./assets/img/Pho_Co_Hoi_An_DaNang.jpg" alt="" class="featured__img">
                                 </figure>
                                 <div class="featured__item-body">
                                     <p class="featured__item-location">
-                                        Huế
+                                        Đà Nẵng
                                     </p>
                                     <h3 class="featured__item-title">
-                                        Kinh Thành Huế
+                                        Phố cổ Hội An
                                     </h3>
                                     <p class="featured__item-desc">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eligendi fugiat

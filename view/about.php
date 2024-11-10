@@ -99,7 +99,7 @@ $positiveFeedback = 95;
                     </div>
                     <div class="col-4">
                         <figure class="about-mission__media">
-                            <img src="../assets/img/Ba_Na_Hill_DaNang.jpg" alt="" class="about-mission__img">
+                            <img src="../assets/img/VKU (3).jpg" alt="" class="about-mission__img">
                         </figure>
                     </div>
                     <div class="col-4">
