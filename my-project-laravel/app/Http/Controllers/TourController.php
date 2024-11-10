@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 class TourController extends Controller
 {
     // Hiển thị danh sách tour
-    public function index()
+    public function tour()
     {
-        $tours = Tour::with('images')->get(); // Lấy danh sách tour và hình ảnh kèm theo
-        return view('tours.index', compact('tours'));
+        $tours = Tour::with('images')->get(); 
+        return view('tours.tour', compact('tours'));
     }
 
     // Hiển thị chi tiết tour
