@@ -1,0 +1,38 @@
+a {
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: rgb(19, 116, 242);
+    --color-text: #2d373c;
+    --text-lighter: #02070e;
+}
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 3);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    font-size: 1.6rem;
+    font-optical-sizing: auto;
+}
+
+img {
+    max-width: 100%;
+}
+a:hover{
+    text-decoration: none;
+}
