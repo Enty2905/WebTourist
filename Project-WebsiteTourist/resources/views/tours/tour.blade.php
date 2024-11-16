@@ -18,7 +18,6 @@
                 </div>
             </div>
         </section>
-
         <section class="search">
             <div class="container">
                 <ul class="search__chose-list">
@@ -121,8 +120,11 @@
                                                     <i class="fa-solid fa-star"></i>
                                                 @endfor
                                             </div>
-                                            <a href="{{ route('tours.show', $tour->id) }}"
-                                                class="tour__action-btn tour__text">Details</a>
+                                            <a href="{{ Auth::check() ? route('tours.show', $tour->id) : 'javascript:void(0)' }}" 
+                                                class="tour__action-btn tour__text" 
+                                                onclick="{{ Auth::check() ? '' : 'return confirmLogin()' }}">
+                                                 Details
+                                             </a>
                                         </div>
                                     </div>
                                 </div>

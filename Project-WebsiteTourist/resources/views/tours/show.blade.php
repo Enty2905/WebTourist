@@ -182,7 +182,8 @@
                                         <div class="booking__actions">
                                             <a href="" class="booking__action tour__action-btn">Liên hệ tư vấn</a>
                                             <button type="submit" class="tour__action-btn booking__btn--submit"
-                                                name="submit">Đặt tour</button>
+                                                name="submit">Đặt tour
+                                            </button>
                                         </div>
                                     </div>
                                 </form>

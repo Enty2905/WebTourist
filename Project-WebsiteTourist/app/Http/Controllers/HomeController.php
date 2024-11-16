@@ -2,17 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Review;
+use App\Models\Stat;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $reviews = Review::all();
+
+        return view('index' , compact('reviews'));
     }
     public function about()
     {
-        return view('about');
+        $stats = Stat::all();
+        return view('about' , compact('stats'));
     }
     public function destinations()
     {
@@ -24,22 +29,12 @@ class HomeController extends Controller
             ['class' => 'destinations__box--medium', 'image' => 'assets/img/Vuon_Quoc_Gia_Bach_Ma_Hue.jpg', 'name' => 'Vườn Quốc Gia Bạch Mã'],
             ['class' => 'destinations__box--large', 'image' => 'assets/img/Song_Han_DaNang.jpg', 'name' => 'Sông Hàn Đà Nẵng'],
         ];
+        $stats = Stat::all();
+        $reviews = Review::all();
 
-        $stats = [
-            ['label' => 'Số lượng khách đã truy cập', 'value' => 10000],
-            ['label' => 'Đánh giá 5*', 'value' => 5000],
-            ['label' => 'Số Tour Đã Được Đặt', 'value' => 2000],
-            ['label' => 'Phản Hồi Tích Cực', 'value' => 8000],
-        ];
-
-        $reviews = [
-            ['image' => 'assets/img/Ba_Na_Hill_DaNang.jpg', 'name' => 'Anh Thái đẹp trai', 'rating' => 5, 'desc' => 'Lorem ipsum...'],
-            ['image' => 'assets/img/Ba_Na_Hill_DaNang.jpg', 'name' => 'Concho Quang', 'rating' => 5, 'desc' => 'Lorem ipsum...'],
-            ['image' => 'assets/img/Ba_Na_Hill_DaNang.jpg', 'name' => 'Concho Nam', 'rating' => 5, 'desc' => 'Lorem ipsum...'],
-        ];
-
-        return view('destinations', compact('destinations', 'stats', 'reviews'));
+        return view('destinations', compact('destinations' , 'stats', 'reviews'));
     }
+
 
     public function blog()
     {

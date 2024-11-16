@@ -20,19 +20,27 @@ window.addEventListener("scroll", function () {
     }
 });
 // Banner
-const images = document.querySelectorAll('.banner__img');
+const images = document.querySelectorAll('.header__banner-img');
 let currentIndex = 0;
 
 function showNextImage() {
     // Ẩn ảnh hiện tại
-    images[currentIndex].classList.remove('banner__img--active');
+    images[currentIndex].classList.remove('header__banner-img--active');
 
     // Tăng index và reset nếu cần
     currentIndex = (currentIndex + 1) % images.length;
 
     // Hiển thị ảnh tiếp theo
-    images[currentIndex].classList.add('banner__img--active');
+    images[currentIndex].classList.add('header__banner-img--active');
 }
 
 // Chạy slide mỗi 2 giây
-setInterval(showNextImage, 10000);
+setInterval(showNextImage, 1000);
+
+// File JS của bạn
+function confirmLogin() {
+    const loginUrl = document.querySelector('meta[name="login-url"]').getAttribute('content');
+    if (confirm("Bạn cần phải đăng nhập để truy cập tính năng này. Bạn có muốn đăng nhập không?")) {
+        window.location.href = loginUrl;
+    }
+}

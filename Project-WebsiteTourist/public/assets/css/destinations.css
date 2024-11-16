@@ -1,11 +1,18 @@
+.stats {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
 /*  */
 .destinations {
     padding: 80px 100px;
 }
-.destinations__top{
+
+.destinations__top {
     margin-bottom: 30px;
     text-align: center;
 }
+
 .destinations__gird {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -17,9 +24,11 @@
     gap: 30px;
     grid-auto-flow: dense;
 }
-.destinations__box{
+
+.destinations__box {
     position: relative;
 }
+
 .destinations__box:nth-child(1) {
     grid-area: a;
 }
@@ -59,10 +68,12 @@
     border-radius: inherit;
     transition: all .5s ease;
 }
-.destinations__img:hover{
+
+.destinations__img:hover {
     scale: 1.1;
 }
-.destinations__location{
+
+.destinations__location {
     position: absolute;
     color: white;
     left: 5%;
@@ -70,6 +81,6 @@
     z-index: 1;
 }
 
-.review{
+.review {
     margin-top: 100px;
 }

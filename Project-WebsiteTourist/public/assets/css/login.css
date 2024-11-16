@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#bg-video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.section-login, .section-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #050617;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+}
+
+.logo h1 {
+    font-size: 2.2em;
+    font-weight: bold;
+    margin: 0;
+}
+#email{
+}
+.form-box {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.inputbox {
+    position: relative;
+    margin: 20px 0;
+    width: 100%;
+    border-bottom: 2px solid #333;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #333;
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.inputbox input {
+    width: 80%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #333;
+}
+
+.inputbox ion-icon {
+    position: absolute;
+    right: 8px;
+    color: #333;
+    font-size: 1.2em;
+    top: 15px;
+}
+
+.inputbox input:focus ~ label,
+.inputbox input:not(:placeholder-shown) ~ label {
+    top: -5px;
+}
+
+.forget {
+    margin: 20px 0 20px;
+    font-size: 0.9em;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+}
+
+.forget label a {
+    color: #333;
+    text-decoration: none;
+}
+
+.forget label a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #333;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 600;
+}
+
+button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.link {
+    font-size: 0.9em;
+    color: #333;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.link p a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+.link p a:hover {
+    text-decoration: underline;
+}
+
+.website-description {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+    color: #fff;
+    z-index: 5;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.website-description span {
+    display: inline-block;
+    animation: slideLeft 10s linear infinite;
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.travel-icons {
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+    display: flex;
+    gap: 20px;
+    font-size: 2em;
+    color: rgba(255, 255, 255, 0.7);
+    z-index: 5;
+}
+
+.travel-icons ion-icon {
+    transition: color 0.3s ease;
+}
+
+.travel-icons ion-icon:hover {
+    color: #fff;
+}

@@ -252,7 +252,7 @@
                 </div>
             </div>
         </section>
-        {{-- 
+        
         <section class="guides">
             <div class="container">
                 <div class="guides__inner">
@@ -292,7 +292,7 @@
                                 </article>
                             </div>
                             <div class="col-6">
-                                <ul class="guides__list">
+                                {{-- <ul class="guides__list">
                                     @foreach ($blogs as $blog)
                                         <li class="guides__item">
                                             <figure class="guides__img-wrap--small">
@@ -310,43 +310,50 @@
                                             </div>
                                         </li>
                                     @endforeach
-                                </ul>
+                                </ul> --}}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section> --}}
-        {{-- 
-        <section class="review">
+        </section>
+         <!-- Reviews -->
+         <section class="review">
             <div class="container">
-                <div class="review__list row">
-                    @foreach ($reviews as $review)
-                        <div class="col-4">
-                            <div class="review__item">
-                                <div class="review__info">
+                <div class="review__inner">
+                    <div class="row">
+                        @foreach ($reviews as $review)
+                            <div class="col-12">
+                                <div class="review__item">
                                     <figure class="review__avt-wrap">
-                                        <img src="{{ asset('assets/img/' . $review->avatar) }}" alt=""
+                                        <img src="{{ asset($review->image) }}" alt="{{ $review->name }}"
                                             class="review__avt">
                                     </figure>
-                                    <div class="review__info-right">
+                                    <p class="review__desc line-clamp" style="--line-clamp: 4;">
+                                        {{ $review->desc }}
+                                    </p>
+                                    <div class="review__info">
                                         <h3 class="review__name">{{ $review->name }}</h3>
                                         <div class="review__rating">
-                                            @for ($i = 0; $i < 5; $i++)
-                                                <i
-                                                    class="fa-solid fa-star {{ $i < $review->rating ? 'active' : '' }}"></i>
+                                            @for ($i = 0; $i < $review->rating; $i++)
+                                                <i class="fa-solid fa-star"></i>
                                             @endfor
                                         </div>
                                     </div>
                                 </div>
-                                <p class="review__desc line-clamp" style="--line-clamp : 7;">
-                                    {{ $review->content }}
-                                </p>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
             </div>
-        </section> --}}
+            <div class="review__controls">
+                <button class="review__btn review__btn-l">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="review__btn review__btn-r">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
     </main>
 @endsection

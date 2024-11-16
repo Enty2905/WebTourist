@@ -119,33 +119,15 @@ $positiveFeedback = 95;
         <!-- Stats -->
         <section class="stats">
             <div class="container">
-                <div class="stats__inner">
-                    <div class="row">
+                <div class="row">
+                    @foreach ($stats as $stat)
                         <div class="col-3">
                             <div class="stats__item">
-                                <h3 class="stats__label about__title">Số lượng khách đã truy cập</h3>
-                                <p class="stats__value about__title" data-count="<?php echo $visitors; ?>">0</p>
+                                <h3 class="stats__label">{{ $stat->label }}</h3>
+                                <p class="stats__value" data-count="{{ $stat->value }}">0</p>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <div class="stats__item">
-                                <h3 class="stats__label about__title">Đánh giá 5*</h3>
-                                <p class="stats__value about__title" data-count="<?php echo $fiveStarReviews; ?>">0</p>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="stats__item">
-                                <h3 class="stats__label about__title">Số Tour Đã Được Đặt</h3>
-                                <p class="stats__value about__title" data-count="<?php echo $tours; ?>">0</p>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="stats__item">
-                                <h3 class="stats__label about__title"> Phản Hồi Tích Cực</h3>
-                                <p class="stats__value about__title" data-count="<?php echo $positiveFeedback; ?>">0</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -258,3 +240,6 @@ $positiveFeedback = 95;
         </section>
     </main>
 @endsection
+@push('scripts')
+        <script src="{{ asset('assets/js/about.js') }}"></script>
+    @endpush
