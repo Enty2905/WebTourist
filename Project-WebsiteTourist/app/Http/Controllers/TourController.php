@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\Tour;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TourController extends Controller
 {
@@ -11,27 +13,22 @@ class TourController extends Controller
     {
         $query = Tour::with('images');
 
-        // Lọc theo location
         if ($request->filled('search__location')) {
             $query->where('location', $request->search__location);
         }
 
-        // Lọc theo loại hình tour
         if ($request->filled('search__type')) {
             $query->where('type', $request->search__type);
         }
 
-        // Lọc theo thời lượng
         if ($request->filled('search__duration')) {
             $query->where('duration', $request->search__duration);
         }
 
-        // Lọc theo trạng thái đang giảm giá
         if ($request->filled('on_sale') && $request->on_sale == 'true') {
             $query->where('on_sale', true);
         }
 
-        // Sắp xếp
         if ($request->filled('sort')) {
             if ($request->sort === 'price_high') {
                 $query->orderBy('price_per_person', 'desc');
@@ -40,7 +37,6 @@ class TourController extends Controller
             }
         }
 
-        // Lấy danh sách tour
         $tours = $query->get();
         $tours = $query->paginate(1);
 
@@ -54,5 +50,25 @@ class TourController extends Controller
         $suggestedTours = Tour::with('images')->inRandomOrder()->take(3)->get();
 
         return view('tours.show', compact('tour', 'suggestedTours'));
+    }
+    public function book(Request $request, $id)
+    {
+        $validated = $request->validate([
+            'start_date' => 'required|date',
+            'num_people' => 'required|integer|min:1',
+        ]);
+
+        $tour = Tour::findOrFail($id);
+        $user = Auth::user();
+
+        $booking = new Booking();
+        $booking->tour_id = $tour->id;
+        $booking->user_id = $user->id; 
+        $booking->start_date = $validated['start_date'];
+        $booking->num_people = $validated['num_people'];
+        $booking->total_price = $tour->price_per_person * $validated['num_people'];
+        $booking->save();
+
+        return redirect()->route('tours.show', $tour->id)->with('success', 'Đặt tour thành công!');
     }
 }

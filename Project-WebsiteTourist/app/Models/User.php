@@ -6,13 +6,14 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Booking;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
     /**
-     * The attributes that are mass assignable.
      *
      * @var array
      */
@@ -21,14 +22,13 @@ class User extends Authenticatable
         'email',
         'phone',
         'password',
-        'role',   
-        'age',     
-        'gender',  
-        'avt',  
+        'role',
+        'age',
+        'gender',
+        'avt',
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
      *
      * @var array
      */
@@ -38,7 +38,6 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be cast to native types.
      *
      * @var array
      */
@@ -47,7 +46,6 @@ class User extends Authenticatable
     ];
 
     /**
-     * Kiểm tra nếu người dùng có vai trò admin.
      *
      * @return bool
      */
@@ -57,7 +55,6 @@ class User extends Authenticatable
     }
 
     /**
-     * Kiểm tra nếu người dùng có vai trò user.
      *
      * @return bool
      */
@@ -67,7 +64,6 @@ class User extends Authenticatable
     }
 
     /**
-     * Lấy giới tính của người dùng dưới dạng chuỗi mô tả.
      *
      * @return string
      */
@@ -79,5 +75,9 @@ class User extends Authenticatable
             'other' => 'Khác',
             default => 'Chưa xác định',
         };
+    }
+    public function bookings(): HasMany
+    {
+        return $this->hasMany(Booking::class);
     }
 }

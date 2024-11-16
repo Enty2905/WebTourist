@@ -33,7 +33,7 @@ class AuthController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'password' => Hash::make($request->password),
-            'role' => 'user', // Mặc định là user, có thể thay đổi nếu cần
+            'role' => 'user',
         ]);
 
         return redirect()->route('login');

@@ -155,39 +155,53 @@
                                 <div class="tour-detail__title section-title">
                                     Giá tour
                                 </div>
-                                <form action="" class="booking__form">
+                                <form action="{{ route('tours.book', $tour->id) }}" method="POST" id="booking-form">
+                                    @csrf
                                     <div class="form-group">
-                                        <div class="booking__date">
-                                            <label for="bookingDate" class="booking__info-label">Ngày : </label>
-                                            <input type="date" name="bookingDate" id="bookingDate" class="bookingDate">
-                                        </div>
+                                        <label for="startDate" class="booking__info-label">Ngày bắt đầu:</label>
+                                        <input type="date" name="start_date" id="startDate" class="startDate" required>
                                     </div>
                                     <div class="form-group booking__info">
-                                        <label for="" class="booking__info-label">Số người</label>
-                                        <label for="" class="booking__info-label">X</label>
-                                        <label for="" class="booking__info-label">2,000,000</label>
+                                        <label for="" class="booking__info-label">Số người:</label>
                                         <div class="booking__controls">
-                                            <button class="booking__btn booking-controls__minus">-</button>
-                                            <input type="number" name="booking__number" id="booking__number"
-                                                class="booking__number" min="1" value="1">
-                                            <button class="booking__btn booking-controls__plus">+</button>
+                                            <button type="button" class="booking__btn booking-controls__minus">-</button>
+                                            <input type="number" name="num_people" id="num_people"
+                                                class="booking__number" min="1" value="1" required>
+                                            <button type="button" class="booking__btn booking-controls__plus">+</button>
                                         </div>
                                     </div>
                                     <div class="form-group booking__total">
-                                        <label for="" class="booking__info-label">Tổng giá tour : </label>
-                                        <label for=""
-                                            class="booking__info-label booking__info-label--price">2,000,000</label>
+                                        <label for="" class="booking__info-label">Tổng giá tour:</label>
+                                        <label id="total_price" class="booking__info-label booking__info-label--price">
+                                            {{ number_format($tour->price_per_person) }}
+                                        </label>
                                     </div>
                                     <div class="form-group">
-                                        <div class="booking__actions">
-                                            <a href="" class="booking__action tour__action-btn">Liên hệ tư vấn</a>
-                                            <button type="submit" class="tour__action-btn booking__btn--submit"
-                                                name="submit">Đặt tour
-                                            </button>
-                                        </div>
+                                        <button type="submit" class="tour__action-btn booking__btn--submit"
+                                            name="submit">Đặt tour</button>
                                     </div>
                                 </form>
                             </div>
+                            <script>
+                                const pricePerPerson = {{ $tour->price_per_person }};
+                                document.querySelectorAll('.booking__controls button').forEach(button => {
+                                    button.addEventListener('click', function(e) {
+                                        e.preventDefault();
+                                        const input = document.getElementById('num_people');
+                                        let currentValue = parseInt(input.value);
+
+                                        if (this.classList.contains('booking-controls__plus')) {
+                                            currentValue++;
+                                        } else if (this.classList.contains('booking-controls__minus') && currentValue > 1) {
+                                            currentValue--;
+                                        }
+
+                                        input.value = currentValue;
+                                        document.getElementById('total_price').textContent =
+                                            new Intl.NumberFormat().format(currentValue * pricePerPerson);
+                                    });
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>

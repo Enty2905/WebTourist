@@ -16,18 +16,23 @@ Route::post('/register', [AuthController::class, 'register'])->name('register.po
 
 // Các route yêu cầu xác thực
 // Route::middleware('auth')->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('index');
-    Route::get('/about', [HomeController::class, 'about'])->name('about');
-    Route::get('/destinations', [HomeController::class, 'destinations'])->name('destinations');
-    Route::get('/tour', [TourController::class, 'tour'])->name('tours.tour');
-    Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
-    Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/destinations', [HomeController::class, 'destinations'])->name('destinations');
+Route::get('/tour', [TourController::class, 'tour'])->name('tours.tour');
+Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
-    Route::get('/profile', [UserController::class, 'profile'])->name('profile');
-    Route::get('/admin-dashboard', function () {
-        return view('contact');
-    })->middleware('check.role:admin')->name('admin.dashboard');
 
-    Route::get('/tours/{id}', [TourController::class, 'show'])->name('tours.show');
-    Route::post('/tours/{id}/book', [TourController::class, 'book'])->name('tours.book');
+Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+Route::get('/profile/bookings', [UserController::class, 'bookings'])->name('profile.bookings');
+
+Route::get('/admin-dashboard', function () {
+    return view('contact');
+})->middleware('check.role:admin')->name('admin.dashboard');
+
+Route::get('/tours/{id}', [TourController::class, 'show'])->name('tours.show');
+Route::post('/tours/{id}', [TourController::class, 'book'])->name('tours.book');
+
+
 // });
