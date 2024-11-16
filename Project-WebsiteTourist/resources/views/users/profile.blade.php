@@ -39,7 +39,8 @@
                             <li class="profile__nav-item">
                                 <i class="fa-solid fa-door-open"></i>
                                 <div class="profile__text">
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        style="display: inline;">
                                         @csrf
                                         <button type="submit" class="">Đăng xuất</button>
                                     </form>
@@ -49,17 +50,17 @@
                     </nav>
                 </div>
                 <div class="col-9">
-                    <div id="profile-info">
-                        <!-- Thông tin cá nhân -->
-                        <div class="profile__header">
-                            <div class="profile__header-left">
-                                <h1 class="profile__title">Thông tin cá nhân</h1>
-                                <p class="profile__text">Lưu thông tin để bạn đặt dịch vụ nhanh hơn</p>
-                            </div>
-                            <figure class="profile__img-wrap">
-                                <img src="{{ asset('assets/img/' . $user->avt) }}" alt="Ảnh đại diện" class="profile__avt">
-                            </figure>
+                    <div class="profile__header">
+                        <div class="profile__header-left">
+                            <h1 class="profile__title">Thông tin cá nhân</h1>
+                            <p class="profile__text">Lưu thông tin để bạn đặt dịch vụ nhanh hơn</p>
                         </div>
+                        <figure class="profile__img-wrap">
+                            <img src="{{ asset('assets/img/' . $user->avt) }}" alt="Ảnh đại diện"
+                                class="profile__avt">
+                        </figure>
+                    </div>
+                    <div class="profile__info">
                         <table class="profile__table">
                             <thead>
                                 <tr>
@@ -98,7 +99,7 @@
                         </table>
                     </div>
 
-                    <div id="my-tours" style="display: none;">
+                    <div class="profile__tours" style="display: none;">
                         <table class="profile__table profile__tour">
                             <thead>
                                 <tr>
@@ -120,8 +121,8 @@
 
     <script>
         document.getElementById('my-tours-tab').addEventListener('click', function () {
-            document.getElementById('profile-info').style.display = 'none';
-            document.getElementById('my-tours').style.display = 'block';
+            document.querySelector('.profile__info').style.display = 'none';
+            document.querySelector('.profile__tours').style.display = 'block';
 
             fetch('{{ route('profile.bookings') }}')
                 .then(response => response.json())
@@ -144,8 +145,8 @@
         });
 
         document.getElementById('profile-info-tab').addEventListener('click', function () {
-            document.getElementById('profile-info').style.display = 'block';
-            document.getElementById('my-tours').style.display = 'none';
+            document.querySelector('.profile__info').style.display = 'block';
+            document.querySelector('.profile__tours').style.display = 'none';
         });
     </script>
 </body>
