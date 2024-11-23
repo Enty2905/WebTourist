@@ -21,6 +21,15 @@
             <div class="form-value">
                 <form method="POST" action="{{ route('login.post') }}">
                     @csrf
+                    @if ($errors->any())
+                        <div class="error-messages">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <h2>Đăng Nhập</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
@@ -33,10 +42,7 @@
                         <label for="password">Mật khẩu</label>
                     </div>
                     <div class="forget">
-                        <label>
-                            <input type="checkbox" name="remember"> Lưu mật khẩu cho lần đăng nhập tới
-                        </label>
-                        <a href="#">Quên mật khẩu</a>
+                        <a href="{{ route('password.request') }}">Quên mật khẩu?</a>
                     </div>
                     <button type="submit">Đăng nhập</button>
                     <div class="link">

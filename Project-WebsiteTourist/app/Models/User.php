@@ -14,21 +14,23 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     /**
+     * Các thuộc tính có thể gán giá trị
      *
      * @var array
      */
     protected $fillable = [
         'name',
-        'email',
-        'phone',
-        'password',
-        'role',
-        'age',
+        'dob',
         'gender',
         'avt',
+        'phone',
+        'email',
+        'password',
+        'role',
     ];
 
     /**
+     * Các thuộc tính ẩn khi xuất ra JSON
      *
      * @var array
      */
@@ -38,14 +40,17 @@ class User extends Authenticatable
     ];
 
     /**
+     * Định dạng lại các cột đặc biệt
      *
      * @var array
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'dob' => 'date',
     ];
 
     /**
+     * Kiểm tra nếu người dùng là admin
      *
      * @return bool
      */
@@ -55,6 +60,7 @@ class User extends Authenticatable
     }
 
     /**
+     * Kiểm tra nếu người dùng là user
      *
      * @return bool
      */
@@ -64,20 +70,29 @@ class User extends Authenticatable
     }
 
     /**
+     * Lấy văn bản giới tính
      *
      * @return string
      */
     public function getGenderTextAttribute()
     {
         return match ($this->gender) {
-            'male' => 'Nam',
-            'female' => 'Nữ',
-            'other' => 'Khác',
+            'Nam' => 'Nam',
+            'Nữ' => 'Nữ',
+            'Khác' => 'Khác',
             default => 'Chưa xác định',
         };
     }
+
+    /**
+     * Quan hệ 1-n với Booking
+     */
     public function bookings(): HasMany
     {
         return $this->hasMany(Booking::class);
+    }
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
     }
 }

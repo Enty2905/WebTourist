@@ -20,7 +20,6 @@
             <div class="form-value">
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
-                    <!-- Hiển thị lỗi xác thực -->
                     @if ($errors->any())
                         <div class="error-messages">
                             <ul>

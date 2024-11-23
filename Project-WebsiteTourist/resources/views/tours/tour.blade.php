@@ -37,60 +37,62 @@
                         <span class="search__chose-text">On sale</span>
                         <i class="fa-regular fa-circle-check"></i>
                     </li>
-                    <li class="search__chose-item" id="resetButton">
-                        <span class="search__chose-text">Reset</span>
-                        <i class="fa-solid fa-rotate"></i>
-                    </li>
                 </ul>
                 <div class="search__form-group">
                     <form class="search__form" id="searchForm" method="GET" action="{{ route('tours.tour') }}">
                         <div class="row">
+                            <!-- Location -->
                             <div class="col-3">
                                 <div class="form-group">
                                     <label for="search__location" class="search__label">Tour location</label>
                                     <select name="search__location" id="search__location" class="search__select form-control">
                                         <option value="">Select Tour Location</option>
-                                        <option value="qb">Quảng Bình</option>
-                                        <option value="hue">Huế</option>
-                                        <option value="dn">Đà Nẵng</option>
+                                        <option value="qb" {{ request('search__location') == 'qb' ? 'selected' : '' }}>Quảng Bình</option>
+                                        <option value="hue" {{ request('search__location') == 'hue' ? 'selected' : '' }}>Huế</option>
+                                        <option value="dn" {{ request('search__location') == 'dn' ? 'selected' : '' }}>Đà Nẵng</option>
+                                        <option value="qn" {{ request('search__location') == 'qn' ? 'selected' : '' }}>Quảng Nam</option>
                                     </select>
                                 </div>
                             </div>
+                    
+                            <!-- Type -->
                             <div class="col-3">
                                 <div class="form-group">
                                     <label for="search__type" class="search__label">Tour Type</label>
                                     <select name="search__type" id="search__type" class="search__select form-control">
-                                        <option value="">Select Tour Type</option>
-                                        <option value="adventure">Adventure</option>
-                                        <option value="relaxation">Relaxation</option>
-                                        <option value="city">City Tour</option>
-                                        <option value="nature">Nature & Wildlife</option>
+                                        <option value="">-- Chọn loại tour --</option>
+                                        <option value="Phiêu lưu" {{ request('search__type') == 'Phiêu lưu' ? 'selected' : '' }}>Phiêu lưu</option>
+                                        <option value="Thư giãn" {{ request('search__type') == 'Thư giãn' ? 'selected' : '' }}>Thư giãn</option>
+                                        <option value="Tham quan thành phố" {{ request('search__type') == 'Tham quan thành phố' ? 'selected' : '' }}>Tham quan thành phố</option>
+                                        <option value="Thiên nhiên & Động vật hoang dã" {{ request('search__type') == 'Thiên nhiên & Động vật hoang dã' ? 'selected' : '' }}>Thiên nhiên & Động vật hoang dã</option>
                                     </select>
                                 </div>
                             </div>
+                    
+                            <!-- Duration -->
                             <div class="col-3">
                                 <div class="form-group">
                                     <label for="search__duration" class="search__label">Tour Duration</label>
                                     <select name="search__duration" id="search__duration" class="search__select form-control">
                                         <option value="">Select Duration</option>
-                                        <option value="1">1 Day</option>
-                                        <option value="2">2-3 Days</option>
-                                        <option value="3">4-7 Days</option>
-                                        <option value="4">1+ Week</option>
+                                        <option value="2_3" {{ request('search__duration') == '2_3' ? 'selected' : '' }}>2-3 Days</option>
+                                        <option value="4_7" {{ request('search__duration') == '4_7' ? 'selected' : '' }}>4-7 Days</option>
+                                        <option value="1w" {{ request('search__duration') == '1w' ? 'selected' : '' }}>1+ Week</option>
                                     </select>
                                 </div>
                             </div>
+                    
+                            <!-- Submit -->
                             <div class="col-3">
                                 <div class="form-group">
-                                    <button type="submit" class="btn form-control search__btn">Search</button>
+                                    <button type="submit" class="tour__action-btn w-100">Search</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- Các input ẩn để lưu trạng thái lọc -->
+                        <!-- Hidden Inputs -->
                         <input type="hidden" name="sort" id="sortInput">
                         <input type="hidden" name="on_sale" id="onSaleInput">
                     </form>
-                    
                 </div>
             </div>
         </section>
@@ -102,11 +104,16 @@
                             <div class="col-4">
                                 <div class="tour__item">
                                     <figure class="tour__img-wrap">
-                                        <img src="{{ asset('assets/img/' . $tour->images->first()->image_url) }}"
-                                            alt="{{ $tour->name }}" class="tour__img">
+                                        @if ($tour->images->isNotEmpty())
+                                            <img src="{{ asset('assets/img/' . $tour->images->first()->image_url) }}"
+                                                 alt="{{ $tour->name }}" class="tour__img">
+                                        @else
+                                            <img src="{{ asset('assets/img/default-tour.jpg') }}" alt="Default Image" class="tour__img">
+                                        @endif
                                     </figure>
+                                    
                                     <div class="tour__item-body">
-                                        <p class="tour__location">{{ $tour->location }}</p>
+                                        <p class="tour__location">{{ $tour->name }}</p>
                                         <p class="tour__price tour__text">
                                             ${{ number_format($tour->price_per_person, 2) }}
                                         </p>
@@ -134,6 +141,7 @@
                             <div class="tour__pagination">
                                 @if ($tours->hasPages())
                                     <ul class="pagination">
+                                        <!-- Previous Button -->
                                         @if ($tours->onFirstPage())
                                             <li class="page-item disabled">
                                                 <span class="page-link">Previous</span>
@@ -143,11 +151,13 @@
                                                 <a href="{{ $tours->previousPageUrl() }}" class="page-link">Previous</a>
                                             </li>
                                         @endif
-                            
+                        
+                                        <!-- Current Page -->
                                         <li class="page-item disabled">
                                             <span class="page-link">{{ $tours->currentPage() }}</span>
                                         </li>
-                            
+                        
+                                        <!-- Next Button -->
                                         @if ($tours->hasMorePages())
                                             <li class="page-item">
                                                 <a href="{{ $tours->nextPageUrl() }}" class="page-link">Next</a>
@@ -161,6 +171,7 @@
                                 @endif
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>

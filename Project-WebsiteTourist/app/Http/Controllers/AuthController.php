@@ -55,7 +55,7 @@ class AuthController extends Controller
                 return redirect()->route('index');
             }
         }
-        return redirect()->back()->with('error', 'Thông tin đăng nhập không đúng.');
+        return redirect()->back()->withErrors(['error' => 'Thông tin đăng nhập không đúng.'])->withInput();
     }
 
     public function logout()

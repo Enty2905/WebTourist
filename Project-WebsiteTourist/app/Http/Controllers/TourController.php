@@ -10,38 +10,46 @@ use Illuminate\Support\Facades\Auth;
 class TourController extends Controller
 {
     public function tour(Request $request)
-    {
-        $query = Tour::with('images');
+{
+    $query = Tour::with('images');
 
-        if ($request->filled('search__location')) {
-            $query->where('location', $request->search__location);
-        }
-
-        if ($request->filled('search__type')) {
-            $query->where('type', $request->search__type);
-        }
-
-        if ($request->filled('search__duration')) {
-            $query->where('duration', $request->search__duration);
-        }
-
-        if ($request->filled('on_sale') && $request->on_sale == 'true') {
-            $query->where('on_sale', true);
-        }
-
-        if ($request->filled('sort')) {
-            if ($request->sort === 'price_high') {
-                $query->orderBy('price_per_person', 'desc');
-            } elseif ($request->sort === 'price_low') {
-                $query->orderBy('price_per_person', 'asc');
-            }
-        }
-
-        $tours = $query->get();
-        $tours = $query->paginate(1);
-
-        return view('tours.tour', compact('tours'));
+    // Lọc theo location nếu có
+    if ($request->filled('search__location')) {
+        $location = $request->search__location;
+        $query->where('location', $location);
     }
+
+    // Lọc theo type nếu có
+    if ($request->filled('search__type')) {
+        $type = $request->search__type;
+        $query->where('type', $type);
+    }
+
+    // Lọc theo duration nếu có
+    if ($request->filled('search__duration')) {
+        $duration = $request->search__duration;
+        $query->where('duration', $duration);
+    }
+
+    // Lọc theo on_sale nếu có
+    if ($request->filled('on_sale') && $request->on_sale == 'true') {
+        $query->where('on_sale', true);
+    }
+
+    // Lọc theo sort nếu có
+    if ($request->filled('sort')) {
+        if ($request->sort === 'price_high') {
+            $query->orderBy('price_per_person', 'desc');
+        } elseif ($request->sort === 'price_low') {
+            $query->orderBy('price_per_person', 'asc');
+        }
+    }
+
+    // Paginate kết quả
+    $tours = $query->paginate(9);
+
+    return view('tours.tour', compact('tours'));
+}
 
     public function show($id)
     {
@@ -63,7 +71,7 @@ class TourController extends Controller
 
         $booking = new Booking();
         $booking->tour_id = $tour->id;
-        $booking->user_id = $user->id; 
+        $booking->user_id = $user->id;
         $booking->start_date = $validated['start_date'];
         $booking->num_people = $validated['num_people'];
         $booking->total_price = $tour->price_per_person * $validated['num_people'];

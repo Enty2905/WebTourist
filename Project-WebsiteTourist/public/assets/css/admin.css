@@ -1,19 +1,19 @@
-.profile {
+.admin {
     padding: 100px 0;
 }
 
-.profile__navbar {
+.admin__navbar {
     padding: 30px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
 }
 
-.profile__nav-list {
+.admin__nav-list {
     display: flex;
     flex-direction: column;
 }
 
-.profile__nav-item {
+.admin__nav-item {
     color: var(--color-text);
     padding: 15px 0;
     display: flex;
@@ -23,23 +23,22 @@
     cursor: pointer;
 }
 
-.profile__nav-item--active {
+.admin__nav-item--active {
     color: var(--primary-color);
     font-size: 2rem;
     font-weight: 800;
 }
 
-.profile__nav-item:first-child {
+.admin__nav-item:first-child {
     padding-top: 0;
 }
 
-.profile__text {
+.admin__text {
     color: currentColor;
     font-size: 1.8rem;
 }
 
-
-.profile__header {
+.admin__header {
     padding: 20px 25px;
     display: flex;
     justify-content: space-between;
@@ -48,34 +47,21 @@
     border-radius: 10px;
 }
 
-.profile__title {
+.admin__title {
     color: var(--primary-color);
     font-size: 4rem;
     font-weight: 600;
     line-height: 1.5;
 }
 
-.profile__img-wrap {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    cursor: pointer;
-}
-.profile__avt{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-.profile__table {
+.admin__table {
     margin-top: 50px;
     width: 100%;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
 }
 
-.profile__table th {
+.admin__table th {
     padding: 20px 25px;
     color: var(--primary-color);
     font-size: 2rem;
@@ -83,13 +69,13 @@
     border-bottom: 1px solid var(--color-text);
 }
 
-.profile__table td {
+.admin__table td {
     font-size: 1.8rem;
     padding: 20px 25px;
     border-bottom: 1px solid var(--color-text);
 }
 
-.profile__btn {
+.admin__btn {
     padding: 10px 20px;
     border-radius: 10px;
     color: white;
@@ -100,12 +86,56 @@
     transition: all .5s ease;
 }
 
-.profile__btn:hover {
+.admin__btn:hover {
     color: var(--primary-color);
     background-color: white;
 }
 
-.profile__text button {
+.form-control,
+.form-select {
+    font-size: 1.8rem;
+}
+
+.modal-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--primary-color);
+}
+
+.image-preview-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.image-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    margin: 5px;
+    transition: transform 0.2s;
+}
+
+.image-preview:hover {
+    transform: scale(1.05);
+}
+
+.image-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    color: var(--primary-color);
+    background: white;
+    padding: 3px 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid var(--primary-color);
+}
+.admin__text button {
     padding: 0;
     background-color: white;
     border: none;

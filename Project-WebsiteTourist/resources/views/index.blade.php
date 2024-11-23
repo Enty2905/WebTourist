@@ -356,4 +356,7 @@
             </div>
         </section>
     </main>
+    @push('scripts')
+        <script src="{{ asset('assets/js/banner.js') }}"></script>
+    @endpush
 @endsection

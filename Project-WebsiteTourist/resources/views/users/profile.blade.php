@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin cá nhân</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- CDN Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -32,17 +34,22 @@
                                 <i class="fa-regular fa-file-lines"></i>
                                 <p class="profile__text">Tour của tôi</p>
                             </li>
+                            @if (auth()->user()->role === 'admin')
+                                <li class="profile__nav-item">
+                                    <i class="fa-solid fa-cog"></i>
+                                    <a href="{{ route('admin.dashboard') }}" class="profile__text">Quản trị</a>
+                                </li>
+                            @endif
                             <li class="profile__nav-item">
                                 <i class="fa-solid fa-door-closed"></i>
                                 <a href="{{ route('index') }}" class="profile__text">Trở về</a>
                             </li>
                             <li class="profile__nav-item">
-                                <i class="fa-solid fa-door-open"></i>
+                                <i class="fa-solid fa-sign-out-alt"></i>
                                 <div class="profile__text">
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                        style="display: inline;">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                         @csrf
-                                        <button type="submit" class="">Đăng xuất</button>
+                                        <button type="submit">Đăng xuất</button>
                                     </form>
                                 </div>
                             </li>
@@ -56,99 +63,19 @@
                             <p class="profile__text">Lưu thông tin để bạn đặt dịch vụ nhanh hơn</p>
                         </div>
                         <figure class="profile__img-wrap">
-                            <img src="{{ asset('assets/img/' . $user->avt) }}" alt="Ảnh đại diện"
-                                class="profile__avt">
+                            <img src="{{ asset('assets/img/avt/' . $user->avt) }}" alt="Ảnh đại diện"
+                                class="profile__avt" id="profileAvt">
+                            <input type="file" id="uploadAvtInput" accept="image/*" style="display: none;">
                         </figure>
                     </div>
-                    <div class="profile__info">
-                        <table class="profile__table">
-                            <thead>
-                                <tr>
-                                    <th>Thông tin</th>
-                                    <th>Chi tiết</th>
-                                    <th>Hành động</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Họ tên</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td><button class="profile__btn">Chỉnh sửa</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Email</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td><button class="profile__btn">Chỉnh sửa</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Điện thoại</td>
-                                    <td>{{ $user->phone }}</td>
-                                    <td><button class="profile__btn">Chỉnh sửa</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Tuổi</td>
-                                    <td>{{ $user->age }}</td>
-                                    <td><button class="profile__btn">Chỉnh sửa</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Giới tính</td>
-                                    <td>{{ ucfirst($user->gender) }}</td>
-                                    <td><button class="profile__btn">Chỉnh sửa</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="profile__tours" style="display: none;">
-                        <table class="profile__table profile__tour">
-                            <thead>
-                                <tr>
-                                    <th>Tên tour</th>
-                                    <th>Ngày đặt</th>
-                                    <th>Ngày bắt đầu</th>
-                                    <th>Số người</th>
-                                    <th>Tổng giá</th>
-                                </tr>
-                            </thead>
-                            <tbody id="booking-list">
-                            </tbody>
-                        </table>
-                    </div>
+                    @include('users.profile-info')
+                    @include('users.profile-tours')
                 </div>
             </div>
         </div>
     </section>
 
-    <script>
-        document.getElementById('my-tours-tab').addEventListener('click', function () {
-            document.querySelector('.profile__info').style.display = 'none';
-            document.querySelector('.profile__tours').style.display = 'block';
-
-            fetch('{{ route('profile.bookings') }}')
-                .then(response => response.json())
-                .then(data => {
-                    let tableRows = '';
-
-                    data.forEach(booking => {
-                        tableRows += `
-                            <tr>
-                                <td>${booking.tour_name}</td>
-                                <td>${booking.booking_date}</td>
-                                <td>${booking.start_date}</td>
-                                <td>${booking.num_people}</td>
-                                <td>${parseFloat(booking.total_price).toLocaleString()} VND</td>
-                            </tr>`;
-                    });
-
-                    document.getElementById('booking-list').innerHTML = tableRows;
-                });
-        });
-
-        document.getElementById('profile-info-tab').addEventListener('click', function () {
-            document.querySelector('.profile__info').style.display = 'block';
-            document.querySelector('.profile__tours').style.display = 'none';
-        });
-    </script>
+    <script src="{{ asset('assets/js/profile.js') }}"></script>
 </body>
 
 </html>
