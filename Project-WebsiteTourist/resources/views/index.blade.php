@@ -267,7 +267,7 @@
                                 </h2>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                     <div class="guides__body">
                         <div class="row">
                             <div class="col-6">

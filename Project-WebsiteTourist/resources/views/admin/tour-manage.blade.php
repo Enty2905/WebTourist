@@ -56,57 +56,65 @@
                     <h5 class="modal-title" id="addTourModalLabel">Thêm tour mới</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form class="search__form" id="searchForm" method="GET" action="{{ route('tours.tour') }}">
-                    <div class="row">
-                        <!-- Location -->
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label for="search__location" class="search__label">Tour location</label>
-                                <select name="search__location" id="search__location" class="search__select form-control">
-                                    <option value="">Select Tour Location</option>
-                                    <option value="qb">Quảng Bình</option>
-                                    <option value="hue">Huế</option>
-                                    <option value="dn">Đà Nẵng</option>
-                                </select>
-                            </div>
+                <form action="{{ route('admin.tours.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Tên tour</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
                         </div>
-                        <!-- Type -->
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label for="search__type" class="search__label">Tour Type</label>
-                                <select name="search__type" id="search__type" class="search__select form-control">
-                                    <option value="">-- Chọn loại tour --</option>
-                                    <option value="Phiêu lưu">Phiêu lưu</option>
-                                    <option value="Thư giãn">Thư giãn</option>
-                                    <option value="Tham quan thành phố">Tham quan thành phố</option>
-                                    <option value="Thiên nhiên & Động vật hoang dã">Thiên nhiên & Động vật hoang dã</option>
-                                </select>
-                            </div>
+                        <div class="mb-3">
+                            <label for="type" class="form-label">Loại tour</label>
+                            <select id="type" name="type" class="form-select" required>
+                                <option value="Phiêu lưu">Phiêu lưu</option>
+                                <option value="Thư giãn">Thư giãn</option>
+                                <option value="Tham quan thành phố">Tham quan thành phố</option>
+                                <option value="Thiên nhiên & Động vật hoang dã">Thiên nhiên & Động vật hoang dã</option>
+                            </select>
                         </div>
-                        <!-- Duration -->
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label for="search__duration" class="search__label">Tour Duration</label>
-                                <select name="search__duration" id="search__duration" class="search__select form-control">
-                                    <option value="">Select Duration</option>
-                                    <option value="2_3">2-3 Days</option>
-                                    <option value="4_7">4-7 Days</option>
-                                    <option value="1w">1+ Week</option>
-                                </select>
-                            </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Mô tả</label>
+                            <textarea id="description" name="description" class="form-control" required></textarea>
                         </div>
-                        <!-- Submit -->
-                        <div class="col-3">
-                            <div class="form-group">
-                                <button type="submit" class="tour__action-btn w-100">Search</button>
-                            </div>
+                        <div class="mb-3">
+                            <label for="price_per_person" class="form-label">Giá mỗi người</label>
+                            <input type="number" id="price_per_person" name="price_per_person" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="duration" class="form-label">Thời lượng (ngày)</label>
+                            <input type="number" id="duration" name="duration" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="location" class="form-label">Địa điểm</label>
+                            <input type="text" id="location" name="location" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="hotel_id" class="form-label">Khách sạn</label>
+                            <select id="hotel_id" name="hotel_id" class="form-select">
+                                @foreach ($hotels as $hotel)
+                                    <option value="{{ $hotel->id }}">{{ $hotel->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="images" class="form-label">Hình ảnh</label>
+                            <input type="file" id="images" name="images[]" class="form-control" multiple onchange="previewImages()">
+                            <div id="image-preview-container" class="mt-3 d-flex flex-wrap gap-2"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="features" class="form-label">Tính năng</label>
+                            <textarea id="features" name="features" class="form-control" placeholder="Mỗi tính năng trên một dòng"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="schedules" class="form-label">Lịch trình</label>
+                            <textarea id="schedules" name="schedules" class="form-control" placeholder="Ngày #;Tiêu đề;Mô tả"></textarea>
                         </div>
                     </div>
-                    <!-- Hidden Inputs -->
-                    <input type="hidden" name="sort" id="sortInput">
-                    <input type="hidden" name="on_sale" id="onSaleInput">
+                    <div class="modal-footer">
+                        <button type="submit" class="admin__btn">Thêm</button>
+                        <button type="button" class="admin__btn" data-bs-dismiss="modal">Hủy</button>
+                    </div>
                 </form>
-                
             </div>
         </div>
     </div>
@@ -187,5 +195,5 @@
             </div>
         </div>
     </div>
-
 </div>
+

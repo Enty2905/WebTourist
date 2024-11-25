@@ -44,7 +44,6 @@
         </div>
     </div>
 
-    <!-- Kiểm tra nếu trang hiện tại là index -->
     @if (request()->is('/'))
         <section class="header__banner">
             <h1 class="header__title">

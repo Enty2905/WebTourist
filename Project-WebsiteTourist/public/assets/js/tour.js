@@ -7,7 +7,6 @@ $(function () {
         $('.search__chose-item').removeClass('search__chose-item--active');
         $(this).addClass('search__chose-item--active');
 
-        // Cập nhật giá trị cho các input ẩn
         switch (action) {
             case 'default':
                 $('#sortInput').val('');

@@ -239,6 +239,12 @@
     opacity: 1;
 }
 
+@media (max-width : 415px) {
+    .navbar , .header__account {
+        display: none;
+    }
+}
+
 /* Explore Adventure" */
 .explore-adventure {
     padding: 50px 0;
@@ -635,7 +641,8 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-.review .row{
+
+.review .row {
     flex-wrap: nowrap;
 }
 
@@ -643,25 +650,27 @@
     padding: 40px;
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     flex-direction: column;
     gap: 10px;
     border-radius: 10px;
 }
 
-.review__info{
+.review__info {
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     flex-direction: column;
     gap: 5px;
 }
+
 .review__desc {
     text-align: justify;
     color: #666;
     font-size: 1.6rem;
     line-height: 1.4;
 }
+
 .review__avt-wrap {
     width: 150px;
     height: 150px;
@@ -680,7 +689,8 @@
     font-weight: 800;
     text-align: center;
 }
-.review__btn{
+
+.review__btn {
     position: absolute;
     top: 50%;
     padding: 20px 25px;
@@ -692,16 +702,20 @@
     outline: none;
     transition: all .5s ease;
 }
-.review__btn:hover{
+
+.review__btn:hover {
     background-color: white;
     border-color: white;
 }
-.review__btn-l{
+
+.review__btn-l {
     left: 22%;
 }
-.review__btn-r{
+
+.review__btn-r {
     right: 18%;
 }
+
 /* End Review */
 /* Footer */
 .footer {

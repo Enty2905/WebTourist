@@ -1,4 +1,3 @@
-// Scroll header
 const header__top = document.querySelector(".header__top-inner");
 const navbar__list = document.querySelector(".navbar__list");
 const headerOriginalTop = header__top.getBoundingClientRect().top;
@@ -21,7 +20,6 @@ window.addEventListener("scroll", function () {
 });
 
 
-// File JS của bạn
 function confirmLogin() {
     const loginUrl = document.querySelector('meta[name="login-url"]').getAttribute('content');
     if (confirm("Bạn cần phải đăng nhập để truy cập tính năng này. Bạn có muốn đăng nhập không?")) {
