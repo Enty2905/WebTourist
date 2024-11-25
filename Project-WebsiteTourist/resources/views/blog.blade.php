@@ -147,7 +147,8 @@
                         <h3 class="blog__title section-title">Theo dõi chúng tôi</h3>
                         <ul class="social">
                             <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="https://www.tiktok.com/@ndt02092005?lang=vi-VN"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="https://www.tiktok.com/@ndt02092005?lang=vi-VN"><i
+                                    class="fa-brands fa-tiktok"></i></a>
                             <a href="https://www.instagram.com/entyyy_29/"><i class="fa-brands fa-instagram"></i></a>
                         </ul>
                     </div>
@@ -155,8 +156,7 @@
             </div>
         </section>
     </main>
-    
 @endsection
 @push('scripts')
-<script src="{{ asset('assets/js/blog.js') }}"></script>
+    <script src="{{ asset('assets/js/blog.js') }}"></script>
 @endpush

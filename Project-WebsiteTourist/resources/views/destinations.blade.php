@@ -49,10 +49,10 @@
         </section>
         <!-- Stats -->
         <section class="stats">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     @foreach ($stats as $stat)
-                        <div class="col-3">
+                        <div class="col-xl-3 col-6">
                             <div class="stats__item">
                                 <h3 class="stats__label">{{ $stat->label }}</h3>
                                 <p class="stats__value" data-count="{{ $stat->value }}">0</p>
@@ -68,7 +68,7 @@
                 <div class="review__inner">
                     <div class="row">
                         @foreach ($reviews as $review)
-                            <div class="col-12">
+                            <div class="col-12 row__item">
                                 <div class="review__item">
                                     <figure class="review__avt-wrap">
                                         <img src="{{ asset($review->image) }}" alt="{{ $review->name }}"
@@ -102,6 +102,6 @@
         </section>
     </main>
     @push('scripts')
-        <script src="{{ asset('assets/js/about.js') }}"></script>
+        <script src="{{ asset('assets/js/scroll.js') }}"></script>
     @endpush
 @endsection

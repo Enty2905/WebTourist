@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Review;
 use App\Models\Stat;
+use App\Models\Tour;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,13 +12,16 @@ class HomeController extends Controller
     public function index()
     {
         $reviews = Review::all();
+        // $tours = Tour::inRandomOrder()->limit(6)->get();
+        $tours = Tour::skip(10)->take(6)->get();
 
-        return view('index' , compact('reviews'));
+        return view('index', compact('reviews', 'tours'));
     }
     public function about()
     {
+        $reviews = Review::all();
         $stats = Stat::all();
-        return view('about' , compact('stats'));
+        return view('about', compact('stats' , 'reviews'));
     }
     public function destinations()
     {
@@ -32,7 +36,7 @@ class HomeController extends Controller
         $stats = Stat::all();
         $reviews = Review::all();
 
-        return view('destinations', compact('destinations' , 'stats', 'reviews'));
+        return view('destinations', compact('destinations', 'stats', 'reviews'));
     }
 
 

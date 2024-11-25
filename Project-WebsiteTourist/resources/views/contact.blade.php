@@ -15,7 +15,7 @@
                         Contact Us
                     </h2>
                 </div>
-            </div>
+            </div> 
         </section>
         <!-- Contact Form -->
         <div class="contact">
@@ -67,7 +67,7 @@
                                         </p>
                                     </li>
                                 </ul>
-                                <div class="contact__social">
+                                <div class="contact__social social">
                                     <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
                                     <a href="https://www.tiktok.com/@ndt02092005?lang=vi-VN"><i
                                             class="fa-brands fa-tiktok"></i></i></a>

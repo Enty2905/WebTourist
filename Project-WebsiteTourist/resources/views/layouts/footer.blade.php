@@ -67,7 +67,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-xl-3 col-md-3 col-lg-6 col-6">
+            <div class="col-xl-3 col-md-3 col-lg-6 col-12">
                 <div class="footer__support">
                     <h3 class="footer__title">
                         Hỗ trợ

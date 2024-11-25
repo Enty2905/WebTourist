@@ -120,7 +120,7 @@
         <section class="about">
             <div class="container">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-xl-6 col-12">
                         <div class="about__content">
                             <p class="section-desc-heading about__desc-heading">
                                 About Us
@@ -175,7 +175,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-xl-6 col-12">
                         <div class="about__media">
                             <figure class="about__img-wrap">
                                 <img src="{{ asset('assets/img/ab1.png') }}" alt="" class="about__img">
@@ -185,7 +185,7 @@
                 </div>
             </div>
         </section>
-        {{-- <section class="featured">
+        <section class="featured">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -202,57 +202,49 @@
                 <div class="featured__list">
                     <div class="row">
                         @foreach ($tours as $tour)
-                            <div class="col-4">
-                                <div class="featured__item">
-                                    <figure class="featured__img-wrap">
-                                        <img src="{{ asset('assets/img/' . $tour->image) }}" alt=""
-                                            class="featured__img">
-                                    </figure>
-                                    <div class="featured__item-body">
-                                        <p class="featured__item-location">{{ $tour->location }}</p>
-                                        <h3 class="featured__item-title">{{ $tour->title }}</h3>
-                                        <p class="featured__item-desc">{{ $tour->description }}</p>
-                                        <div class="featured__info">
-                                            <b class="featured__price">{{ $tour->price }} $</b>
-                                            <div class="featured__time">
-                                                <i class="fa-solid fa-clock featured__time-icon"></i>
-                                                <span class="featured__time-text">{{ $tour->duration }} day</span>
+                            <div class="col-xl-4 col-12 row__item">
+                                <a href="{{ Auth::check() ? route('tours.show', $tour->id) : 'javascript:void(0)' }}"
+                                    class="tour__action-btn tour__text"
+                                    onclick="{{ Auth::check() ? '' : 'return confirmLogin()' }}">
+                                    <div class="featured__item">
+                                        <figure class="featured__img-wrap">
+                                            <img src="{{ asset('assets/img/' . $tour->images->first()->image_url) }}"
+                                                alt="" class="featured__img">
+                                        </figure>
+                                        <div class="featured__item-body">
+                                            <p class="featured__item-location">{{ $tour->location }}</p>
+                                            <h3 class="featured__item-title">{{ $tour->title }}</h3>
+                                            <p class="featured__item-desc">{{ $tour->description }}</p>
+                                            <div class="featured__info">
+                                                <b class="featured__price">{{ $tour->price_per_person }} $</b>
+                                                <div class="featured__time">
+                                                    <i class="fa-solid fa-clock featured__time-icon"></i>
+                                                    <span class="featured__time-text">{{ $tour->duration }} day</span>
+                                                </div>
                                             </div>
                                         </div>
+                                        <div class="featured__rating">
+                                            @for ($i = 0; $i < 5; $i++)
+                                                <i class="fa-solid fa-star {{ $i < $tour->rating ? 'active' : '' }}"></i>
+                                            @endfor
+                                        </div>
                                     </div>
-                                    <div class="featured__rating">
-                                        @for ($i = 0; $i < 5; $i++)
-                                            <i class="fa-solid fa-star {{ $i < $tour->rating ? 'active' : '' }}"></i>
-                                        @endfor
-                                    </div>
-                                </div>
+                                </a>
                             </div>
                         @endforeach
                     </div>
-                </div>
-            </div>
-        </section> --}}
-
-        <section class="highlights-video">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="highlights-video__content">
-                            <h2 class="highlights-video__title section-title">
-                                Traveling Highlights
-                            </h2>
-                            <p class="highlights-video__desc section-desc-heading">Your New Traveling Idea</p>
-                            <div class="highlights-video__icon">
-                                <a href="#!">
-                                    <i class="fa-regular fa-circle-play"></i>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="featured__controls">
+                        <button class="featured__btn featured__btn-l">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button class="featured__btn featured__btn-r">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <section class="guides">
             <div class="container">
                 <div class="guides__inner">
@@ -267,11 +259,12 @@
                                 </h2>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                     <div class="guides__body">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-xl-6 col-12 ">
                                 <article class="guides__blog-main">
+
                                     <figure class="guides__img-wrap">
                                         <img src="{{ asset('assets/img/blog_10-500x280.jpeg') }}" alt=""
                                             class="guides__img">
@@ -291,7 +284,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-6">
+                            <div class="col-xl-6 col-12">
                                 {{-- <ul class="guides__list">
                                     @foreach ($blogs as $blog)
                                         <li class="guides__item">
@@ -317,13 +310,13 @@
                 </div>
             </div>
         </section>
-         <!-- Reviews -->
-         <section class="review">
+        <!-- Reviews -->
+        <section class="review">
             <div class="container">
                 <div class="review__inner">
                     <div class="row">
                         @foreach ($reviews as $review)
-                            <div class="col-12">
+                            <div class="col-12 row__item">
                                 <div class="review__item">
                                     <figure class="review__avt-wrap">
                                         <img src="{{ asset($review->image) }}" alt="{{ $review->name }}"
@@ -358,5 +351,6 @@
     </main>
     @push('scripts')
         <script src="{{ asset('assets/js/banner.js') }}"></script>
+        <script src="{{ asset('assets/js/scroll.js') }}"></script>
     @endpush
 @endsection

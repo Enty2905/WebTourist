@@ -20,6 +20,7 @@ body {
 }
 
 .tour-detail__img-wrap {
+    position: relative;
     margin-bottom: 120px;
     width: 100%;
     height: 400px;
@@ -38,14 +39,16 @@ body {
     display: flex;
     gap: 1.33%;
     overflow: hidden;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .tour-detail__thumb-img {
     flex-shrink: 0;
-    flex: 0 0 24%;
+    flex: 0 0 calc(25% - 1.33%);
     height: 100px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.281);
+    object-fit: cover;
 }
 
 .tour-detail__title {
@@ -60,7 +63,7 @@ body {
 }
 
 .tour-detail__hotel-img-wrap {
-    width: 1005;
+    width: 100%;
     height: 450px;
 }
 
@@ -232,4 +235,47 @@ body {
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+@media (max-width: 415px) {
+    .tour-detail__hotel-img-wrap {
+        height: auto;
+    }
+
+    .tour-detail__btn:last-child {
+        right: -5px;
+    }
+    .tour-detail__thumb-img {
+        flex: 0 0 calc(50% - 1.33%);
+    }
+}
+
+.tour-detail__controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.tour-detail__btn {
+    position: absolute;
+    background: #ffffff3a;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tour-detail__btn:hover {
+    background: #ffffffd5;
+}
+
+.tour-detail__btn:first-child {
+    bottom: -70px;
+    left: 0;
+}
+
+.tour-detail__btn:last-child {
+    bottom: -70px;
+    right: 10px;
 }

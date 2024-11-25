@@ -84,3 +84,20 @@
 .review {
     margin-top: 100px;
 }
+
+@media(max-width: 414px) {
+    .destinations {
+        padding: 80px 10px;
+    }
+
+    .destinations__gird {
+    grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "a a a a"
+            "c c d d"
+            "b b b b"
+            "e e f f";
+        gap: 15px;
+        grid-auto-flow: dense;
+    }
+}

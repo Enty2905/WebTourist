@@ -1,6 +1,7 @@
+// Hàm xem trước ảnh trước khi upload
 function previewImages(event) {
     const previewContainer = document.getElementById('previews');
-    previewContainer.innerHTML = ''; // Clear previous previews
+    previewContainer.innerHTML = ''; // Xóa các ảnh đã xem trước trước đó
 
     const files = event.target.files;
     for (const file of files) {
@@ -16,20 +17,27 @@ function previewImages(event) {
         reader.readAsDataURL(file);
     }
 }
+
 $(document).ready(function() {
-    // Lắng nghe sự kiện click trên nút like
+    // Lấy CSRF token từ thẻ meta
+    const csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    // Xử lý nút Like
     $('.btn-like').click(function(e) {
         e.preventDefault();
 
         var postId = $(this).data('post-id'); // Lấy ID bài viết
-        var liked = $(this).data('liked'); // Kiểm tra nếu đã like
+        var liked = $(this).data('liked'); // Kiểm tra trạng thái like
         var button = $(this);
 
+        // Gửi AJAX
         $.ajax({
             url: '/posts/like/' + postId, // URL route
             type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': csrfToken // Gửi CSRF token
+            },
             data: {
-                _token: '{{ csrf_token() }}',
                 post_id: postId
             },
             success: function(response) {
@@ -38,36 +46,41 @@ $(document).ready(function() {
 
                 // Thay đổi trạng thái nút like
                 if (liked) {
-                    button.text('Like'); // Nếu đã like thì bỏ like
+                    button.text('Like'); // Nếu đã like thì chuyển sang bỏ like
                 } else {
                     button.text('Hủy Like'); // Nếu chưa like thì like
                 }
 
                 // Cập nhật trạng thái liked
                 button.data('liked', !liked);
+            },
+            error: function(xhr) {
+                alert('Có lỗi xảy ra khi xử lý yêu cầu.');
             }
         });
     });
-});
-$(document).ready(function() {
+
+    // Xử lý form bình luận
     $('.comment-form').submit(function(e) {
-        e.preventDefault(); // Ngừng gửi form thông thường
+        e.preventDefault(); // Ngăn chặn hành động gửi form mặc định
 
         var form = $(this);
-        var postId = form.data('post-id'); // Lấy post_id từ data attribute
+        var postId = form.data('post-id'); // Lấy ID bài viết từ data attribute
         var content = form.find('.comment-content').val(); // Lấy nội dung bình luận
 
         // Gửi AJAX
         $.ajax({
             url: '/posts/' + postId + '/comment', // URL của route
             type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': csrfToken // Gửi CSRF token
+            },
             data: {
-                _token: $('meta[name="csrf-token"]').attr('content'), // CSRF token
-                content: content, // Nội dung bình luận
+                content: content // Nội dung bình luận
             },
             success: function(response) {
                 if (response.status === 'success') {
-                    // Hiển thị bình luận mới ngay trên trang
+                    // Thêm bình luận mới vào danh sách bình luận
                     var commentHtml = `
                         <div class="comment">
                             <p>${response.comment.content} - <strong>${response.comment.user.name}</strong></p>

@@ -40,6 +40,45 @@
                     onclick="{{ Auth::check() ? '' : 'return confirmLogin()' }}">
                     <i class="fa-regular fa-user"></i>
                 </a>
+                <div class="menu-mb">
+                    <button class="menu-mb__btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <ul class="menu-mb__list">
+                        <li class="menu-mb__item">
+                            <a href="{{ url('/') }}"
+                                class="navbar__link {{ request()->is('/') ? 'navbar__link--active' : '' }}">Home</a>
+                        </li>
+                        <li class="menu-mb__item">
+                            <a href="{{ url('/about') }}"
+                                class="navbar__link {{ request()->is('about') ? 'navbar__link--active' : '' }}">About
+                                Us</a>
+                        </li>
+                        <li class="menu-mb__item">
+                            <a href="{{ url('/destinations') }}"
+                                class="navbar__link {{ request()->is('destinations') ? 'navbar__link--active' : '' }}">Destinations</a>
+                        </li>
+                        <li class="menu-mb__item">
+                            <a href="{{ url('/tour') }}"
+                                class="navbar__link {{ request()->is('tour') ? 'navbar__link--active' : '' }}">Tour</a>
+                        </li>
+                        <li class="menu-mb__item">
+                            <a href="{{ url('/blog') }}"
+                                class="navbar__link {{ request()->is('blog') ? 'navbar__link--active' : '' }}">Blog</a>
+                        </li>
+                        <li class="menu-mb__item">
+                            <a href="{{ url('/contact') }}"
+                                class="navbar__link {{ request()->is('contact') ? 'navbar__link--active' : '' }}">Contact
+                                Us</a>
+                        </li>
+                        <li class="menu-mb__item">
+                            <a href="{{ Auth::check() ? url('/profile') : 'javascript:void(0)' }}"
+                                class="menu-mb__account" onclick="{{ Auth::check() ? '' : 'return confirmLogin()' }}">
+                                <i class="fa-regular fa-user"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

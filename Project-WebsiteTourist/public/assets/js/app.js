@@ -26,3 +26,7 @@ function confirmLogin() {
         window.location.href = loginUrl;
     }
 }
+document.querySelector(".menu-mb__btn").addEventListener("click", function () {
+    const menuList = document.querySelector(".menu-mb__list");
+    menuList.classList.toggle("show");
+});

@@ -33,15 +33,23 @@
                             </div>
                         </div>
 
-                        <div class="col-8">
+                        <div class="col-xl-8 col-12">
                             <figure class="tour-detail__img-wrap">
                                 <img src="{{ asset('assets/img/' . $tour->images->first()->image_url) }}"
-                                    alt="{{ $tour->name }}" class="tour-detail__img">
+                                    alt="{{ $tour->name }}" class="tour-detail__img" id="main-img">
                                 <div class="tour-detail__thumb">
                                     @foreach ($tour->images->skip(1) as $image)
                                         <img src="{{ asset('assets/img/' . $image->image_url) }}" alt="{{ $tour->name }}"
                                             class="tour-detail__thumb-img">
                                     @endforeach
+                                </div>
+                                <div class="tour-detail__controls">
+                                    <button class="tour-detail__btn tour-detail__btn-l">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </button>
+                                    <button class="tour-detail__btn tour-detail__btn-r">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </button>
                                 </div>
                             </figure>
                             <div class="tour-detail__section">
@@ -124,7 +132,38 @@
                             </div>
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-xl-4 col-12">
+                            <div class="tour-detail__booking">
+                                <div class="tour-detail__title section-title">
+                                    Giá tour
+                                </div>
+                                <form action="{{ route('tours.book', $tour->id) }}" method="POST" id="booking-form">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="startDate" class="booking__info-label">Ngày bắt đầu:</label>
+                                        <input type="date" name="start_date" id="startDate" class="startDate" required>
+                                    </div>
+                                    <div class="form-group booking__info">
+                                        <label for="" class="booking__info-label">Số người:</label>
+                                        <div class="booking__controls">
+                                            <button type="button" class="booking__btn booking-controls__minus">-</button>
+                                            <input type="number" name="num_people" id="num_people" class="booking__number"
+                                                min="1" value="1" required>
+                                            <button type="button" class="booking__btn booking-controls__plus">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group booking__total">
+                                        <label for="" class="booking__info-label">Tổng giá tour:</label>
+                                        <label id="total_price" class="booking__info-label booking__info-label--price">
+                                            {{ number_format($tour->price_per_person) }}
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="tour__action-btn booking__btn--submit"
+                                            name="submit">Đặt tour</button>
+                                    </div>
+                                </form>
+                            </div>
                             @foreach ($suggestedTours as $suggestedTour)
                                 <div class="tour__item">
                                     <figure class="tour__img-wrap">
@@ -151,37 +190,6 @@
                                     </div>
                                 </div>
                             @endforeach
-                            <div class="tour-detail__booking">
-                                <div class="tour-detail__title section-title">
-                                    Giá tour
-                                </div>
-                                <form action="{{ route('tours.book', $tour->id) }}" method="POST" id="booking-form">
-                                    @csrf
-                                    <div class="form-group">
-                                        <label for="startDate" class="booking__info-label">Ngày bắt đầu:</label>
-                                        <input type="date" name="start_date" id="startDate" class="startDate" required>
-                                    </div>
-                                    <div class="form-group booking__info">
-                                        <label for="" class="booking__info-label">Số người:</label>
-                                        <div class="booking__controls">
-                                            <button type="button" class="booking__btn booking-controls__minus">-</button>
-                                            <input type="number" name="num_people" id="num_people"
-                                                class="booking__number" min="1" value="1" required>
-                                            <button type="button" class="booking__btn booking-controls__plus">+</button>
-                                        </div>
-                                    </div>
-                                    <div class="form-group booking__total">
-                                        <label for="" class="booking__info-label">Tổng giá tour:</label>
-                                        <label id="total_price" class="booking__info-label booking__info-label--price">
-                                            {{ number_format($tour->price_per_person) }}
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="tour__action-btn booking__btn--submit"
-                                            name="submit">Đặt tour</button>
-                                    </div>
-                                </form>
-                            </div>
                             <script>
                                 const pricePerPerson = {{ $tour->price_per_person }};
                                 document.querySelectorAll('.booking__controls button').forEach(button => {

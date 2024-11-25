@@ -2,7 +2,7 @@
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('assets/css/tour.css') }}">
-@endpush
+@endpush 
 
 @section('content')
     <main class="main">
@@ -42,7 +42,7 @@
                     <form class="search__form" id="searchForm" method="GET" action="{{ route('tours.tour') }}">
                         <div class="row">
                             <!-- Location -->
-                            <div class="col-3">
+                            <div class="col-xl-3 col-6">
                                 <div class="form-group">
                                     <label for="search__location" class="search__label">Tour location</label>
                                     <select name="search__location" id="search__location" class="search__select form-control">
@@ -56,7 +56,7 @@
                             </div>
                     
                             <!-- Type -->
-                            <div class="col-3">
+                            <div class="col-xl-3 col-6">
                                 <div class="form-group">
                                     <label for="search__type" class="search__label">Tour Type</label>
                                     <select name="search__type" id="search__type" class="search__select form-control">
@@ -70,7 +70,7 @@
                             </div>
                     
                             <!-- Duration -->
-                            <div class="col-3">
+                            <div class="col-xl-3 col-6">
                                 <div class="form-group">
                                     <label for="search__duration" class="search__label">Tour Duration</label>
                                     <select name="search__duration" id="search__duration" class="search__select form-control">
@@ -83,7 +83,7 @@
                             </div>
                     
                             <!-- Submit -->
-                            <div class="col-3">
+                            <div class="col-xl-3 col-6">
                                 <div class="form-group">
                                     <button type="submit" class="tour__action-btn w-100">Search</button>
                                 </div>
@@ -101,7 +101,7 @@
                 <div class="tour__list" id="toursList">
                     <div class="row">
                         @foreach ($tours as $tour)
-                            <div class="col-4">
+                            <div class="col-xl-4 col-6">
                                 <div class="tour__item">
                                     <figure class="tour__img-wrap">
                                         @if ($tour->images->isNotEmpty())
@@ -113,12 +113,12 @@
                                     </figure>
                                     
                                     <div class="tour__item-body">
-                                        <p class="tour__location">{{ $tour->name }}</p>
+                                        <p class="tour__location line-clamp" style="--line-clamp:1;">{{ $tour->name }}</p>
                                         <p class="tour__price tour__text">
                                             ${{ number_format($tour->price_per_person, 2) }}
                                         </p>
                                         <div class="tour__item-info">
-                                            <p class="tour__type tour__text">{{ $tour->type }}</p>
+                                            <p class="tour__type tour__text line-clamp" style="--line-clamp:1;">{{ $tour->type }}</p>
                                             <p class="tour__duration tour__text">{{ $tour->duration }} Days</p>
                                         </div>
                                         <div class="tour__actions">

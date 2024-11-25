@@ -25,7 +25,7 @@ $positiveFeedback = 95;
                             </h2>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-xl-4 col-12">
                         <div class="about-mission__content">
                             <h3 class="about-mission__content-title about__title">
                                 Mang đến cho bạn chuyến du lịch tuyệt vời nhất
@@ -41,12 +41,12 @@ $positiveFeedback = 95;
                             </p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-xl-4 col-12">
                         <figure class="about-mission__media">
                             <img src="{{ asset('assets/img/VKU (3).jpg') }}" alt="Mission Image" class="about-mission__img">
                         </figure>
                     </div>
-                    <div class="col-4">
+                    <div class="col-xl-4 col-12">
                         <div class="about-mission__content">
                             <h3 class="about-mission__content-title about__title">
                                 Mang đến cho bạn chuyến du lịch tuyệt vời nhất
@@ -79,12 +79,13 @@ $positiveFeedback = 95;
                             </h2>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-xl-6 col-12">
                         <figure class="about-story__media">
-                            <img src="{{ asset('assets/img/Ba_Na_Hill_DaNang.jpg') }}" alt="Ba Na Hill" class="about-story__img">
+                            <img src="{{ asset('assets/img/Ba_Na_Hill_DaNang.jpg') }}" alt="Ba Na Hill"
+                                class="about-story__img">
                         </figure>
                     </div>
-                    <div class="col-6">
+                    <div class="col-xl-6 col-12">
                         <h3 class="about-story__content-title about__title">
                             Chúng tôi là ai ?
                         </h3>
@@ -96,7 +97,7 @@ $positiveFeedback = 95;
                             aspernatur
                         </p>
                     </div>
-                    <div class="col-6">
+                    <div class="col-xl-6 col-12">
                         <h3 class="about-story__content-title about__title">
                             Tại sao lại có website này ?
                         </h3>
@@ -108,9 +109,10 @@ $positiveFeedback = 95;
                             aspernatur
                         </p>
                     </div>
-                    <div class="col-6">
+                    <div class="col-xl-6 col-12">
                         <figure class="about-story__media">
-                            <img src="{{ asset('assets/img/Ba_Na_Hill_DaNang.jpg') }}" alt="Ba Na Hill" class="about-story__img">
+                            <img src="{{ asset('assets/img/Ba_Na_Hill_DaNang.jpg') }}" alt="Ba Na Hill"
+                                class="about-story__img">
                         </figure>
                     </div>
                 </div>
@@ -121,7 +123,7 @@ $positiveFeedback = 95;
             <div class="container">
                 <div class="row">
                     @foreach ($stats as $stat)
-                        <div class="col-3">
+                        <div class="col-xl-3 col-6">
                             <div class="stats__item">
                                 <h3 class="stats__label">{{ $stat->label }}</h3>
                                 <p class="stats__value" data-count="{{ $stat->value }}">0</p>
@@ -149,7 +151,8 @@ $positiveFeedback = 95;
                         <div class="col-4">
                             <div class="founders__item">
                                 <figure class="founders__img-wrap">
-                                    <img src="{{ asset('assets/img/Ba_Na_Hill_DaNang.jpg') }}" alt="Founder Image" class="founders__img">
+                                    <img src="{{ asset('assets/img/Ba_Na_Hill_DaNang.jpg') }}" alt="Founder Image"
+                                        class="founders__img">
                                 </figure>
                                 <div class="founders__item-content">
                                     <h3 class="founders__name about__title">Anh Thái đẹp zai</h3>
@@ -160,7 +163,8 @@ $positiveFeedback = 95;
                         <div class="col-4">
                             <div class="founders__item">
                                 <figure class="founders__img-wrap">
-                                    <img src="{{ asset('assets/img/Ba_Na_Hill_DaNang.jpg') }}" alt="Founder Image" class="founders__img">
+                                    <img src="{{ asset('assets/img/Ba_Na_Hill_DaNang.jpg') }}" alt="Founder Image"
+                                        class="founders__img">
                                 </figure>
                                 <div class="founders__item-content">
                                     <h3 class="founders__name about__title">Lê Xuân Hòi Nôm</h3>
@@ -171,7 +175,8 @@ $positiveFeedback = 95;
                         <div class="col-4">
                             <div class="founders__item">
                                 <figure class="founders__img-wrap">
-                                    <img src="{{ asset('assets/img/Ba_Na_Hill_DaNang.jpg') }}" alt="Founder Image" class="founders__img">
+                                    <img src="{{ asset('assets/img/Ba_Na_Hill_DaNang.jpg') }}" alt="Founder Image"
+                                        class="founders__img">
                                 </figure>
                                 <div class="founders__item-content">
                                     <h3 class="founders__name about__title">Chần Chình Choang</h3>
@@ -189,57 +194,44 @@ $positiveFeedback = 95;
         <!-- Review -->
         <section class="review">
             <div class="container">
-                <div class="review__list row">
-                    <div class="col-4">
-                        <div class="review__item">
-                            <div class="review__info">
-                                <figure class="review__avt-wrap">
-                                    <img src="{{ asset('assets/img/Ba_Na_Hill_DaNang.jpg') }}" alt="Reviewer Avatar" class="review__avt">
-                                </figure>
-                                <div class="review__info-content">
-                                    <h3 class="review__name about__title">MỸ LÝ</h3>
-                                    <p class="review__job">CTO</p>
+                <div class="review__inner">
+                    <div class="row">
+                        @foreach ($reviews as $review)
+                            <div class="col-12 row__item">
+                                <div class="review__item">
+                                    <figure class="review__avt-wrap">
+                                        <img src="{{ asset($review->image) }}" alt="{{ $review->name }}"
+                                            class="review__avt">
+                                    </figure>
+                                    <p class="review__desc line-clamp" style="--line-clamp: 4;">
+                                        {{ $review->desc }}
+                                    </p>
+                                    <div class="review__info">
+                                        <h3 class="review__name">{{ $review->name }}</h3>
+                                        <div class="review__rating">
+                                            @for ($i = 0; $i < $review->rating; $i++)
+                                                <i class="fa-solid fa-star"></i>
+                                            @endfor
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <p class="review__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi beatae
-                                asperiores doloremque molestias dolorum, neque facere.</p>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="review__item">
-                            <div class="review__info">
-                                <figure class="review__avt-wrap">
-                                    <img src="{{ asset('assets/img/Ba_Na_Hill_DaNang.jpg') }}" alt="Reviewer Avatar" class="review__avt">
-                                </figure>
-                                <div class="review__info-content">
-                                    <h3 class="review__name about__title">MỸ LÝ</h3>
-                                    <p class="review__job">CTO</p>
-                                </div>
-                            </div>
-                            <p class="review__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi beatae
-                                asperiores doloremque molestias dolorum, neque facere.</p>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="review__item">
-                            <div class="review__info">
-                                <figure class="review__avt-wrap">
-                                    <img src="{{ asset('assets/img/Ba_Na_Hill_DaNang.jpg') }}" alt="Reviewer Avatar" class="review__avt">
-                                </figure>
-                                <div class="review__info-content">
-                                    <h3 class="review__name about__title">MỸ LÝ</h3>
-                                    <p class="review__job">CTO</p>
-                                </div>
-                            </div>
-                            <p class="review__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi beatae
-                                asperiores doloremque molestias dolorum, neque facere.</p>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
+            </div>
+            <div class="review__controls">
+                <button class="review__btn review__btn-l">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="review__btn review__btn-r">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
             </div>
         </section>
     </main>
 @endsection
 @push('scripts')
-        <script src="{{ asset('assets/js/about.js') }}"></script>
-    @endpush
+    <script src="{{ asset('assets/js/scroll.js') }}"></script>
+    <script src="{{ asset('assets/js/about.js') }}"></script>
+@endpush
