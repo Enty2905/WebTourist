@@ -1,40 +1,31 @@
-$(function () {
-    // Khi chọn một tiêu chí lọc
-    $('.search__chose-item').on('click', function () {
-        var action = $(this).data('action');
+const searchForm = document.getElementById("searchForm");
 
-        // Xóa trạng thái active
-        $('.search__chose-item').removeClass('search__chose-item--active');
-        $(this).addClass('search__chose-item--active');
+const items = document.querySelectorAll(".search__chose-item");
 
-        switch (action) {
-            case 'default':
-                $('#sortInput').val('');
-                $('#onSaleInput').val('');
-                break;
-            case 'price_high':
-                $('#sortInput').val('price_high');
-                $('#onSaleInput').val('');
-                break;
-            case 'price_low':
-                $('#sortInput').val('price_low');
-                $('#onSaleInput').val('');
-                break;
-            case 'on_sale':
-                $('#sortInput').val('');
-                $('#onSaleInput').val('true');
-                break;
+items.forEach(function (item) {
+    item.addEventListener("click", function () {
+        const action = item.dataset.action;
+
+        items.forEach(function (el) {
+            el.classList.remove("search__chose-item--active");
+        });
+
+        item.classList.add("search__chose-item--active");
+
+        if (action === "default") {
+            document.getElementById("sortInput").value = "";
+            document.getElementById("onSaleInput").value = "";
+        } else if (action === "price_high") {
+            document.getElementById("sortInput").value = "price_high";
+            document.getElementById("onSaleInput").value = "";
+        } else if (action === "price_low") {
+            document.getElementById("sortInput").value = "price_low";
+            document.getElementById("onSaleInput").value = "";
+        } else if (action === "on_sale") {
+            document.getElementById("sortInput").value = "";
+            document.getElementById("onSaleInput").value = "true";
         }
 
-        // Gửi form
-        $('#searchForm').submit();
-    });
-
-    // Reset form
-    $('#resetButton').on('click', function () {
-        $('#searchForm')[0].reset();
-        $('#sortInput').val('');
-        $('#onSaleInput').val('');
-        $('#searchForm').submit();
+        searchForm.submit();
     });
 });

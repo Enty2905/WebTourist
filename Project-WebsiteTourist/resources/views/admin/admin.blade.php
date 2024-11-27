@@ -31,6 +31,10 @@
                                 <i class="fa-solid fa-map"></i>
                                 <p class="admin__text">Quản lý Tours</p>
                             </li>
+                            <li class="admin__nav-item" data-tab="post-manage">
+                                <i class="fa-solid fa-map"></i>
+                                <p class="admin__text">Quản lý Blogs</p>
+                            </li>
                             <li class="admin__nav-item">
                                 <i class="fa-solid fa-door-closed"></i>
                                 <a href="{{ route('index') }}" class="admin__text">Trở về</a>
@@ -46,7 +50,7 @@
                             </li>
                         </ul>
                     </nav>
-                    @if (session('success'))
+                    {{-- @if (session('success'))
                         <script>
                             alert('{{ session('success') }}');
                         </script>
@@ -55,13 +59,15 @@
                         <script>
                             alert('{{ session('error') }}');
                         </script>
-                    @endif
+                    @endif --}}
                 </div>
                 <div class="col-9">
                     <div class="admin__content">
                         @include('admin.user-manage')
 
                         @include('admin.tour-manage')
+
+                        @include('admin.post-manage')
                     </div>
                 </div>
             </div>

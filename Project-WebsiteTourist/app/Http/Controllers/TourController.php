@@ -10,50 +10,57 @@ use Illuminate\Support\Facades\Auth;
 class TourController extends Controller
 {
     public function tour(Request $request)
-    {
-        $query = Tour::with('images');
+{
+    $query = Tour::with('images');
 
-        // Lọc theo location nếu có
-        if ($request->filled('search__location')) {
-            $location = $request->search__location;
-            $query->where('location', $location);
-        }
-
-        // Lọc theo type nếu có
-        if ($request->filled('search__type')) {
-            $type = $request->search__type;
-            $query->where('type', $type);
-        }
-
-        // Lọc theo duration nếu có
-        if ($request->filled('search__duration')) {
-            $duration = $request->search__duration;
-            $query->where('duration', $duration);
-        }
-
-        // Lọc theo on_sale nếu có
-        if ($request->filled('on_sale') && $request->on_sale == 'true') {
-            $query->where('on_sale', true);
-        }
-
-        // Lọc theo sort nếu có
-        if ($request->filled('sort')) {
-            if ($request->sort === 'price_high') {
-                $query->orderBy('price_per_person', 'desc');
-            } elseif ($request->sort === 'price_low') {
-                $query->orderBy('price_per_person', 'asc');
-            }
-        }
-
-        // Paginate kết quả
-        $tours = $query->paginate(9);
-
-        return view('tours.tour', compact('tours'));
+    // Lọc theo location nếu có
+    if ($request->filled('search__location')) {
+        $location = $request->search__location;
+        $query->where('location', $location);
     }
+
+    // Lọc theo type nếu có
+    if ($request->filled('search__type')) {
+        $type = $request->search__type;
+        $query->where('type', $type);
+    }
+
+    // Lọc theo duration nếu có
+    if ($request->filled('search__duration')) {
+        $duration = $request->search__duration;
+
+        if ($duration === '2_3') {
+            $query->whereBetween('duration', [2, 3]);
+        } elseif ($duration === '4_7') {
+            $query->whereBetween('duration', [4, 7]);
+        } elseif ($duration === '1w') {
+            $query->where('duration', '>', 7);
+        }
+    }
+
+    // Lọc theo on_sale nếu có
+    if ($request->filled('on_sale') && $request->on_sale == 'true') {
+        $query->where('on_sale', true);
+    }
+
+    // Lọc theo sort nếu có
+    if ($request->filled('sort')) {
+        if ($request->sort === 'price_high') {
+            $query->orderBy('price_per_person', 'desc');
+        } elseif ($request->sort === 'price_low') {
+            $query->orderBy('price_per_person', 'asc');
+        }
+    }
+
+    // Paginate kết quả
+    $tours = $query->paginate(9);
+
+    return view('tours.tour', compact('tours'));
+}
 
     public function show($id)
     {
-        $tour = Tour::with(['schedules', 'features', 'reviews', 'images', 'hotel'])->findOrFail($id);
+        $tour = Tour::with(['schedules', 'features' , 'images', 'hotel'])->findOrFail($id);
 
         $suggestedTours = Tour::with('images')->inRandomOrder()->take(3)->get();
 

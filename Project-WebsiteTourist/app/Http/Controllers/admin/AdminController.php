@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Hotel;
+use App\Models\Post;
 use App\Models\User;
 use App\Models\Tour;
 use App\Models\TourFeature;
@@ -22,7 +23,9 @@ class AdminController extends Controller
             $users = User::all();
             $tours = Tour::all();
             $hotels = Hotel::all();
-            return view('admin.admin', compact('users', 'tours', 'hotels'));
+            $posts = Post::with('user')->orderBy('created_at', 'desc')->get();
+
+            return view('admin.admin', compact('users', 'tours', 'hotels', 'posts'));
         } catch (\Exception $e) {
             Log::error('Error loading dashboard: ' . $e->getMessage());
             return redirect()->route('admin.dashboard')->with('error', 'Đã xảy ra lỗi khi tải trang. Vui lòng thử lại.');
@@ -106,7 +109,6 @@ class AdminController extends Controller
                 'type' => $validated['type'],
             ]);
 
-            // Handle image uploads
             if ($request->hasFile('images')) {
                 foreach ($request->file('images') as $file) {
                     $folderPath = public_path('assets/img/tours');
@@ -127,7 +129,6 @@ class AdminController extends Controller
                 }
             }
 
-            // Handle tour features
             if ($request->features) {
                 $features = explode("\n", $request->features);
                 foreach ($features as $feature) {
@@ -138,7 +139,6 @@ class AdminController extends Controller
                 }
             }
 
-            // Handle schedules
             if ($request->schedules) {
                 $schedules = explode("\n", $request->schedules);
                 foreach ($schedules as $schedule) {
@@ -212,7 +212,6 @@ class AdminController extends Controller
                 'type' => $validated['type'],
             ]);
 
-            // Handle removing images
             if ($request->remove_images) {
                 foreach ($request->remove_images as $image) {
                     TourImage::where('tour_id', $id)->where('image_url', $image)->delete();
@@ -223,7 +222,6 @@ class AdminController extends Controller
                 }
             }
 
-            // Handle adding new images
             if ($request->hasFile('new_images')) {
                 foreach ($request->file('new_images') as $file) {
                     $folderPath = public_path('assets/img/tours');
@@ -243,22 +241,19 @@ class AdminController extends Controller
                 }
             }
 
-            // Handle schedules
             if ($request->has('schedules')) {
-                // Xóa tất cả schedules cũ
                 TourSchedule::where('tour_id', $tour->id)->delete();
-                
-                // Thêm schedules mới
+
                 $schedules = explode("\n", $request->schedules);
                 foreach ($schedules as $schedule) {
-                    if (empty(trim($schedule))) continue; // Bỏ qua dòng trống
-                    
+                    if (empty(trim($schedule))) continue;
+
                     $parts = explode(';', $schedule);
-                    if (count($parts) >= 3) { // Đảm bảo có đủ 3 phần: ngày, tiêu đề, mô tả
+                    if (count($parts) >= 3) {
                         $day = trim($parts[0]);
                         $title = trim($parts[1]);
                         $description = trim($parts[2]);
-                        
+
                         TourSchedule::create([
                             'tour_id' => $tour->id,
                             'day_number' => (int)$day,
@@ -274,5 +269,30 @@ class AdminController extends Controller
             Log::error('Error updating tour: ' . $e->getMessage());
             return redirect()->route('admin.dashboard')->with('error', 'Đã xảy ra lỗi khi cập nhật tour. Vui lòng thử lại.');
         }
+    }
+
+    public function approvePost($id)
+    {
+        $post = Post::findOrFail($id);
+
+        if ($post->is_approved) {
+            $post->is_approved = false;
+            $message = 'Bài viết đã bị hủy duyệt.';
+        } else {
+            $post->is_approved = true;
+            $message = 'Bài viết đã được duyệt.';
+        }
+
+        $post->save();
+
+        return redirect()->route('admin.dashboard')->with('success', $message);
+    }
+
+    public function destroyPost($id)
+    {
+        $post = Post::findOrFail($id);
+        $post->delete();
+
+        return redirect()->route('admin.dashboard')->with('success', 'Bài viết đã bị xóa.');
     }
 }

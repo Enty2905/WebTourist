@@ -51,7 +51,7 @@ Route::get('/password/reset/{token}', [UserController::class, 'showResetPassword
 // Xử lý đặt lại mật khẩu
 Route::post('/password/reset', [UserController::class, 'resetPassword'])->name('password.reset');
 
-
+ 
 Route::middleware(['auth', 'check.role:admin'])->group(function () {
     // Dashboard admin
     Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
@@ -67,6 +67,10 @@ Route::middleware(['auth', 'check.role:admin'])->group(function () {
     // Update user và tour (cập nhật)
     Route::put('/admin/users/{id}', [AdminController::class, 'updateUser'])->name('admin.users.update');
     Route::put('/admin/tours/{id}', [AdminController::class, 'updateTour'])->name('admin.tours.update');
+
+    
+    Route::patch('/admin/posts/{id}/approve', [AdminController::class, 'approvePost'])->name('admin.posts.approve');
+    Route::delete('/admin/posts/{id}', [AdminController::class, 'destroyPost'])->name('admin.posts.destroy');
 });
 
 // Tour

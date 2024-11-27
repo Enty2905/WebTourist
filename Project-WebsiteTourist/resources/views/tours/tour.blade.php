@@ -33,10 +33,6 @@
                         <span class="search__chose-text">Price to Down</span>
                         <i class="fa-solid fa-arrow-down"></i>
                     </li>
-                    <li class="search__chose-item" data-action="on_sale">
-                        <span class="search__chose-text">On sale</span>
-                        <i class="fa-regular fa-circle-check"></i>
-                    </li>
                 </ul>
                 <div class="search__form-group">
                     <form class="search__form" id="searchForm" method="GET" action="{{ route('tours.tour') }}">
@@ -81,7 +77,7 @@
                                     </select>
                                 </div>
                             </div>
-                    
+                            
                             <!-- Submit -->
                             <div class="col-xl-3 col-6">
                                 <div class="form-group">

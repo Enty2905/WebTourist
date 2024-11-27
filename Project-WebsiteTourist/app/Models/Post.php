@@ -5,12 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
+
 class Post extends Model
 {
     use HasFactory, Notifiable;
-   
 
-    protected $fillable = ['content', 'image', 'user_id', 'likes'];
+
+    protected $fillable = [
+        'content',
+        'image',
+        'user_id',
+        'likes',
+        'is_approved', 
+    ];
 
     public function user()
     {
@@ -33,5 +40,4 @@ class Post extends Model
     {
         return $this->hasMany(PostImage::class);
     }
-
 }

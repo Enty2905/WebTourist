@@ -29,11 +29,6 @@ class Tour extends Model
         return $this->hasMany(TourFeature::class);
     }
 
-    public function reviews()
-    {
-        return $this->hasMany(TourReview::class);
-    }
-
     public function images()
     {
         return $this->hasMany(TourImage::class);

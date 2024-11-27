@@ -17,12 +17,16 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with(['comments.user', 'likes'])->orderBy('created_at', 'desc')->get();
-
+        $posts = Post::with(['comments.user', 'likes'])
+            ->where('is_approved', true) // Thêm điều kiện này
+            ->orderBy('created_at', 'desc')
+            ->get();
+    
         $userLikes = Like::where('user_id', Auth::id())->pluck('post_id')->toArray();
-
+    
         return view('blog', compact('posts', 'userLikes'));
     }
+    
 
     /**
      * Lưu bài viết mới.

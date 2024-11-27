@@ -3,38 +3,30 @@ const navItems = document.querySelectorAll(".admin__nav-item");
 const sections = {
     'user-manage': document.getElementById('user-manage'),
     'tour-manage': document.getElementById('tour-manage'),
+    'post-manage': document.getElementById('post-manage'), 
 };
-const DEFAULT_TAB = 'user-manage';
-let currentTab = localStorage.getItem('activeTab') || DEFAULT_TAB;
 const previewContainer = document.getElementById('image-preview-container');
 const inputElement = document.getElementById('images');
 const inputNewImages = document.getElementById('new-images');
 const currentImagesContainer = document.getElementById('current-images-container');
 const updateForm = document.getElementById('updateTourForm');
 
-// Initialize state
+// Initialization
+const DEFAULT_TAB = 'user-manage';
+let currentTab = localStorage.getItem('activeTab') || DEFAULT_TAB;
+
 showTab(currentTab);
 initializeScrollPosition();
 
 // Event Listeners
-navItems.forEach(item => {
-    item.addEventListener("click", onNavItemClick);
-});
+navItems.forEach(item => item.addEventListener("click", onNavItemClick));
+inputElement.addEventListener("change", () => handleImagePreview(previewContainer, inputElement));
+inputNewImages.addEventListener("change", () => handleImagePreview(document.getElementById('new-images-preview-container'), inputNewImages));
 
-inputElement.addEventListener("change", previewImages);
-inputNewImages.addEventListener("change", previewUpdateImages);
+document.querySelectorAll('.edit-tour-btn').forEach(button => button.addEventListener('click', onEditTourClick));
+document.querySelectorAll('.edit-user-btn').forEach(button => button.addEventListener('click', onEditUserClick));
 
-document.querySelectorAll('.edit-tour-btn').forEach(button => {
-    button.addEventListener('click', onEditTourClick);
-});
-
-document.querySelectorAll('.edit-user-btn').forEach(button => {
-    button.addEventListener('click', onEditUserClick);
-});
-
-// Functions
-
-// Show selected tab
+// Tab Navigation Functions
 function showTab(tab) {
     Object.keys(sections).forEach(section => {
         sections[section].style.display = section === tab ? 'block' : 'none';
@@ -44,7 +36,6 @@ function showTab(tab) {
     });
 }
 
-// Handle tab click
 function onNavItemClick() {
     const tab = this.getAttribute('data-tab');
     if (tab) {
@@ -54,7 +45,7 @@ function onNavItemClick() {
     }
 }
 
-// Save scroll position on unload
+// Scroll Position Functions
 function initializeScrollPosition() {
     window.addEventListener('beforeunload', () => {
         localStorage.setItem('scrollPosition', window.scrollY);
@@ -64,45 +55,23 @@ function initializeScrollPosition() {
     if (savedScrollPosition) window.scrollTo(0, parseInt(savedScrollPosition, 10));
 }
 
-// Image preview (for regular images)
-function previewImages() {
-    previewContainer.innerHTML = '';
-    const files = inputElement.files;
-    
-    if (files.length > 0) {
-        Array.from(files).forEach((file, index) => {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                const imgWrapper = createImagePreviewWrapper(e.target.result, file.name, index);
-                previewContainer.appendChild(imgWrapper);
-            };
-            reader.readAsDataURL(file);
-        });
-    }
+// Image Handling Functions
+function handleImagePreview(container, input) {
+    container.innerHTML = '';
+    Array.from(input.files).forEach((file, index) => {
+        const reader = new FileReader();
+        reader.onload = e => {
+            const imgWrapper = createImagePreviewWrapper(e.target.result, file.name, index, () =>
+                removeImageFromInput(input, index, container));
+            container.appendChild(imgWrapper);
+        };
+        reader.readAsDataURL(file);
+    });
 }
 
-// Image preview (for new images)
-function previewUpdateImages() {
-    const previewContainer = document.getElementById('new-images-preview-container');
-    previewContainer.innerHTML = '';
-    const files = inputNewImages.files;
-    
-    if (files.length > 0) {
-        Array.from(files).forEach((file, index) => {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                const imgWrapper = createImagePreviewWrapper(e.target.result, file.name, index);
-                previewContainer.appendChild(imgWrapper);
-            };
-            reader.readAsDataURL(file);
-        });
-    }
-}
-
-// Helper function to create image preview wrapper
-function createImagePreviewWrapper(src, alt, index) {
-    const imgWrapper = document.createElement('div');
-    imgWrapper.className = 'image-preview-wrapper';
+function createImagePreviewWrapper(src, alt, index, removeCallback) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'image-preview-wrapper';
 
     const img = document.createElement('img');
     img.src = src;
@@ -112,28 +81,29 @@ function createImagePreviewWrapper(src, alt, index) {
     const closeBtn = document.createElement('span');
     closeBtn.textContent = '×';
     closeBtn.className = 'image-close-btn';
-    closeBtn.onclick = () => removeImageFromInput(index, imgWrapper);
+    closeBtn.onclick = removeCallback;
 
-    imgWrapper.appendChild(img);
-    imgWrapper.appendChild(closeBtn);
-    return imgWrapper;
+    wrapper.appendChild(img);
+    wrapper.appendChild(closeBtn);
+    return wrapper;
 }
 
-// Remove image from input files
-function removeImageFromInput(index, imgWrapper) {
+function removeImageFromInput(input, index, container) {
     const dataTransfer = new DataTransfer();
-    Array.from(inputElement.files).forEach((file, i) => {
+    Array.from(input.files).forEach((file, i) => {
         if (i !== index) dataTransfer.items.add(file);
     });
-    inputElement.files = dataTransfer.files;
-    imgWrapper.remove();
+    input.files = dataTransfer.files;
+    container.children[index].remove();
 }
 
-// Tour Edit functionality
+// Tour Editing Functions
 function onEditTourClick() {
     const { dataset } = this;
     const { id, name, type, description, price, duration, location, hotel, schedules, images } = dataset;
 
+    // Populate form fields
+    updateForm.action = `/admin/tours/${id}`;
     document.getElementById('update-tour-id').value = id;
     document.getElementById('update-name').value = name;
     document.getElementById('update-type').value = type;
@@ -144,51 +114,49 @@ function onEditTourClick() {
     document.getElementById('update-hotel_id').value = hotel;
     document.getElementById('update-schedules').value = schedules.replace(/\\n/g, '');
 
-    updateForm.action = `/admin/tours/${id}`;
-    
-    // Render current images
+    renderCurrentImages(images.split(','));
+}
+
+function renderCurrentImages(images) {
     currentImagesContainer.innerHTML = '';
-    images.split(',').forEach(imageUrl => {
-        const imageElement = createCurrentImageElement(imageUrl);
-        currentImagesContainer.appendChild(imageElement);
-    });
-
-    document.querySelectorAll('.remove-image-btn').forEach(removeBtn => {
-        removeBtn.addEventListener('click', removeCurrentImage);
+    images.forEach(imageUrl => {
+        const wrapper = createImageElement(`/assets/img/${imageUrl}`, () =>
+            removeCurrentImage(imageUrl));
+        currentImagesContainer.appendChild(wrapper);
     });
 }
 
-// Create current image element for editing
-function createCurrentImageElement(imageUrl) {
-    const imageElement = document.createElement('div');
-    imageElement.classList.add('position-relative', 'image-preview-wrapper');
-    imageElement.style.width = '100px';
-    imageElement.style.height = '100px';
-    imageElement.innerHTML = `
-        <img src="/assets/img/${imageUrl}" class="image-preview">
-        <button type="button" class="image-close-btn remove-image-btn" data-image="${imageUrl}">
-            <i class="fa-solid fa-x"></i>
-        </button>
-    `;
-    return imageElement;
+function createImageElement(src, removeCallback) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'image-preview-wrapper position-relative';
+
+    const img = document.createElement('img');
+    img.src = src;
+    img.className = 'image-preview';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'image-close-btn remove-image-btn';
+    closeBtn.innerHTML = '<i class="fa-solid fa-x"></i>';
+    closeBtn.onclick = removeCallback;
+
+    wrapper.appendChild(img);
+    wrapper.appendChild(closeBtn);
+    return wrapper;
 }
 
-// Remove current image
-function removeCurrentImage() {
-    const imageToRemove = this.dataset.image;
-    this.parentElement.remove();
+function removeCurrentImage(imageUrl) {
+    const hiddenInput = document.createElement('input');
+    hiddenInput.type = 'hidden';
+    hiddenInput.name = 'remove_images[]';
+    hiddenInput.value = imageUrl;
+    updateForm.appendChild(hiddenInput);
 
-    const removeImageInput = document.createElement('input');
-    removeImageInput.type = 'hidden';
-    removeImageInput.name = 'remove_images[]';
-    removeImageInput.value = imageToRemove;
-    updateForm.appendChild(removeImageInput);
+    document.querySelector(`button[data-image="${imageUrl}"]`).closest('.image-preview-wrapper').remove();
 }
 
-// User Edit functionality
+// User Editing Functions
 function onEditUserClick() {
     const { id, name, email, phone, role } = $(this).data();
-
     $('#editUserModal').find('#edit-user-id').val(id);
     $('#editUserModal').find('#edit-name').val(name);
     $('#editUserModal').find('#edit-email').val(email);
