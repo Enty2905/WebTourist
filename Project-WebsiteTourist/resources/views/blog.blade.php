@@ -51,8 +51,8 @@
 
                                             <!-- Input file cho nhiều hình ảnh -->
                                             <div class="form-group mb-3">
-                                                <label for="images">Chọn hình ảnh:</label>
-                                                <input type="file" class="form-control" id="images" name="images[]"
+                                                <label for="images form-lable">Chọn hình ảnh:</label>
+                                                <input type="file" class="" id="images" name="images[]"
                                                     accept="image/*" multiple onchange="previewImages(event)">
                                             </div>
 
@@ -89,9 +89,6 @@
 
                                             </div>
                                         @endif
-
-
-
                                         <!-- Danh sách bình luận -->
                                         <h6 class="mt-3">Bình luận:</h6>
                                         @foreach ($post->comments as $comment)
@@ -135,15 +132,6 @@
                     </div>
 
                     <div class="col-md-4">
-                        <h3 class="blog__title section-title">Danh Mục</h3>
-                        <ul class="list-group">
-                            <li class="list-group-item"><a href="#" class="list-group-link">Điểm đến</a></li>
-                            <li class="list-group-item"><a href="#" class="list-group-link">Hướng dẫn du
-                                    lịch</a></li>
-                            <li class="list-group-item"><a href="#" class="list-group-link">Kinh nghiệm</a>
-                            </li>
-                        </ul>
-
                         <h3 class="blog__title section-title">Theo dõi chúng tôi</h3>
                         <ul class="social">
                             <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
